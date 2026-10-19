@@ -96,14 +96,14 @@ console.log("wrote js/guide-data.js");
 
 // Sitemap
 const urls = ["index.html", ...content.map((p) => `${p.slug}.html`), "scenarios.html", "guides.html", "tools.html", "dashboard.html"]
-  .map((u) => `  <url><loc>https://example.org/apocalypse-survival/${u}</loc><lastmod>${R.SITE.updated}</lastmod></url>`)
+  .map((u) => `  <url><loc>${R.SITE.url}${u}</loc><lastmod>${R.SITE.updated}</lastmod></url>`)
   .join("\n");
 fs.writeFileSync(
   path.join(root, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`
 );
 
-fs.writeFileSync(path.join(root, "robots.txt"), "User-agent: *\nAllow: /\nSitemap: https://example.org/apocalypse-survival/sitemap.xml\n");
+fs.writeFileSync(path.join(root, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${R.SITE.url}sitemap.xml\n`);
 
 // Service worker file list
 const pages = ["index.html", "guides.html", "tools.html", "dashboard.html", "404.html", "offline.html", "scenarios.html", ...content.map((p) => `${p.slug}.html`)];

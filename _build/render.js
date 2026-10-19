@@ -4,7 +4,7 @@ const SITE = {
   description:
     "A practical, offline-ready field manual for water, food, shelter, medicine, radio, planning and disaster response in India.",
   updated: "2026-10-19",
-  url: "https://example.org/apocalypse-survival/",
+  url: "https://mrzodiac333.github.io/blackout/",
 };
 
 const CATEGORIES = {
