@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" role="img" aria-labelledby="t d">
+<title id="t">Two-metre J-pole antenna plan</title>
+<desc id="d">Dimensioned J-pole for 146 megahertz built from copper pipe or twin-lead, showing the short stub, long radiator, feed point and coax connection.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:6;fill:none;stroke-linecap:round}.ac{stroke:#ff6b00;stroke-width:3;fill:none}.dim{stroke:#a8a091;stroke-width:1.5;fill:none;stroke-dasharray:6 4}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:16px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:16px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:13px}
+</style>
+<rect class="bg" width="800" height="460"/>
+<text class="ac2" x="30" y="36">2 m J-POLE · 146 MHz</text>
+<line class="ln" x1="330" y1="80" x2="330" y2="380"/>
+<line class="ln" x1="400" y1="80" x2="400" y2="270"/>
+<path class="ln" d="M400 270 q35 55 0 110"/>
+<path class="ln" d="M330 380 q0 40 35 55 q35 15 35 -55"/>
+<line class="ac" x1="330" y1="300" x2="400" y2="300"/>
+<text class="ac2" x="345" y="292">FEED</text>
+<line class="ac" x1="365" y1="300" x2="365" y2="430"/>
+<text class="mu" x="375" y="420">COAX</text>
+<line class="dim" x1="300" y1="80" x2="300" y2="380"/>
+<line class="dim" x1="290" y1="80" x2="310" y2="80"/>
+<line class="dim" x1="290" y1="380" x2="310" y2="380"/>
+<text class="ac2" x="120" y="235">1480 mm</text>
+<line class="dim" x1="430" y1="80" x2="430" y2="270"/>
+<line class="dim" x1="420" y1="80" x2="440" y2="80"/>
+<line class="dim" x1="420" y1="270" x2="440" y2="270"/>
+<text class="ac2" x="445" y="185">495 mm</text>
+<line class="dim" x1="450" y1="270" x2="450" y2="380"/>
+<text class="mu" x="455" y="330">stub</text>
+<line class="dim" x1="330" y1="330" x2="400" y2="330"/>
+<text class="mu" x="350" y="352">50 mm gap</text>
+<text class="mu" x="30" y="445">Tune by sliding the feed point for lowest SWR; seal the coax joint. Mount clear of walls and wiring.</text>
+</svg>

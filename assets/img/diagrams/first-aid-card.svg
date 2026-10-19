@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="t d">
+<title id="t">First aid quick reference card</title>
+<desc id="d">Pocket card summarising severe bleeding, CPR, choking, burns, shock and the emergency number 112.</desc>
+<style>
+  .bg{fill:#0a0a0a}.frame{fill:none;stroke:#ff6b00;stroke-width:3}
+  .hd{fill:#ff6b00;font-family:'Special Elite','Courier New',monospace;font-size:26px}
+  .tx{fill:#f2ead9;font-family:'Courier Prime','Courier New',monospace;font-size:15px}
+  .ac{fill:#ff6b00;font-family:'Courier Prime','Courier New',monospace;font-size:15px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime','Courier New',monospace;font-size:12px}
+  .ln{stroke:#2e2e2e;stroke-width:1}
+</style>
+<rect class="bg" width="800" height="520"/>
+<rect class="frame" x="16" y="16" width="768" height="488"/>
+<text class="hd" x="40" y="60">FIRST AID · QUICK CARD</text>
+<text class="ac" x="640" y="60">CALL 112</text>
+<line class="ln" x1="40" y1="78" x2="760" y2="78"/>
+<text class="ac" x="40" y="110">SEVERE BLEEDING</text>
+<text class="tx" x="40" y="134">Direct pressure. Add dressings. Tourniquet only if trained.</text>
+<text class="ac" x="40" y="170">CPR (ADULT)</text>
+<text class="tx" x="40" y="194">Unresponsive + not breathing: 30 compressions, 2 breaths.</text>
+<text class="tx" x="40" y="214">Centre of chest, 5–6 cm deep, 100–120/min. AED ASAP.</text>
+<text class="ac" x="40" y="250">CHOKING</text>
+<text class="tx" x="40" y="274">5 back blows, 5 abdominal thrusts. Alternate. CPR if unconscious.</text>
+<text class="ac" x="40" y="310">BURNS</text>
+<text class="tx" x="40" y="334">Cool 20 min with running water. No ice, butter or toothpaste.</text>
+<text class="tx" x="40" y="354">Cover with non-stick dressing. Seek care for large/deep burns.</text>
+<text class="ac" x="40" y="390">SHOCK</text>
+<text class="tx" x="40" y="414">Lay down, raise legs, keep warm, no food/drink. Call 112.</text>
+<text class="ac" x="40" y="450">RECOVERY POSITION</text>
+<text class="tx" x="40" y="474">Unconscious but breathing: on side, mouth down, monitor.</text>
+<text class="mu" x="40" y="502">Education only. Take a certified first-aid course. Not a substitute for professional care.</text>
+</svg>

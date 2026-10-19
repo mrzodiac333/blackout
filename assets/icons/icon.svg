@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Blackout survival guide icon">
+<rect width="512" height="512" rx="72" fill="#0a0a0a"/>
+<rect x="40" y="40" width="432" height="432" rx="40" fill="none" stroke="#ff6b00" stroke-width="10"/>
+<path d="M256 120 L256 250" stroke="#ff6b00" stroke-width="26" stroke-linecap="round"/>
+<circle cx="256" cy="330" r="26" fill="#ff6b00"/>
+<path d="M120 120 L120 180 M120 120 L180 120" stroke="#f2ead9" stroke-width="8" fill="none"/>
+<path d="M392 392 L392 332 M392 392 L332 392" stroke="#f2ead9" stroke-width="8" fill="none"/>
+</svg>

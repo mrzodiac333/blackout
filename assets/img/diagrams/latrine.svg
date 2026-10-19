@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="t d">
+<title id="t">Emergency latrine plan</title>
+<desc id="d">Diagram of a shallow trench latrine with distance rules from water sources, homes and food.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:3;fill:none}.ac{stroke:#ff6b00;stroke-width:3;fill:none}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:15px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:15px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:13px}
+</style>
+<rect class="bg" width="800" height="360"/>
+<text class="ac2" x="30" y="32">EMERGENCY LATRINE · SITING</text>
+<rect class="ln" x="120" y="80" width="260" height="150"/>
+<path class="ac" d="M140 95 L140 215 M140 95 L200 95"/>
+<text class="tx" x="150" y="130">1.0–1.2 m deep</text>
+<text class="tx" x="150" y="160">0.3 m wide trench</text>
+<text class="mu" x="150" y="185">Cover each use with soil</text>
+<text class="mu" x="150" y="205">or ash; add lime if available</text>
+<circle class="ac" cx="560" cy="230" r="26"/>
+<text class="mu" x="530" y="275">WATER</text>
+<path class="ac" d="M380 170 L530 220"/>
+<text class="ac2" x="400" y="185">≥30 m uphill/downhill</text>
+<text class="mu" x="400" y="205">and ≥30 m from wells</text>
+<text class="mu" x="120" y="260">≥10 m from shelter</text>
+<text class="mu" x="120" y="280">≥15 m from kitchen</text>
+<text class="mu" x="120" y="320">Hand-wash station: soap + covered water container beside the path.</text>
+<text class="mu" x="30" y="350">Never site latrines in flood paths or near surface water. Keep a privacy screen.</text>
+</svg>

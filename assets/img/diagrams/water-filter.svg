@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" role="img" aria-labelledby="t d">
+<title id="t">DIY three-stage water filter diagram</title>
+<desc id="d">Cross-section of a bucket filter with gravel, sand and charcoal layers, and a note that filtration does not disinfect.</desc>
+<style>
+  .bg{fill:#0a0a0a}.out{stroke:#f2ead9;stroke-width:3;fill:none}.ac{stroke:#ff6b00;stroke-width:3;fill:none}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:15px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:16px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:13px}
+  .g1{fill:#5a5245}.g2{fill:#8a7a5e}.g3{fill:#2c2c2c}.g4{fill:#3d3d3d}
+</style>
+<rect class="bg" width="800" height="460"/>
+<text class="ac2" x="30" y="36">THREE-STAGE BUCKET FILTER · CROSS-SECTION</text>
+<path class="out" d="M240 90 L560 90 L530 400 L270 400 Z"/>
+<rect class="g4" x="254" y="100" width="292" height="52"/>
+<rect class="g1" x="258" y="152" width="284" height="60"/>
+<rect class="g2" x="262" y="212" width="276" height="80"/>
+<rect class="g3" x="266" y="292" width="268" height="80"/>
+<path class="ac" d="M250 330 L250 420 L310 420"/>
+<text class="mu" x="320" y="425">drip / tap</text>
+<text class="tx" x="580" y="130">1 · CLOTH + CHARCOAL</text>
+<text class="mu" x="580" y="150">crushed, rinsed charcoal</text>
+<text class="tx" x="580" y="210">2 · FINE SAND</text>
+<text class="mu" x="580" y="230">10–15 cm, washed</text>
+<text class="tx" x="580" y="290">3 · GRAVEL</text>
+<text class="mu" x="580" y="310">5–10 cm, washed</text>
+<text class="mu" x="580" y="360">Bottom: clean cloth</text>
+<line class="ac" x1="120" y1="120" x2="230" y2="120"/>
+<path class="ac" d="M150 100 L230 120 L150 140"/>
+<text class="mu" x="30" y="100">POUR</text>
+<text class="mu" x="30" y="150">SETTLED</text>
+<text class="mu" x="30" y="168">WATER</text>
+<text class="ac2" x="30" y="440">FILTER ≠ SAFE. Always boil, chlorinate, or use UV/SODIS after filtering.</text>
+</svg>

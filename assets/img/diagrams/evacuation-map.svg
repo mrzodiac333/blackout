@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="t d">
+<title id="t">Evacuation map template</title>
+<desc id="d">Blank printable map template with home, meeting points, hospital, water source, routes and legend.</desc>
+<style>
+  .bg{fill:#0a0a0a}.frame{fill:none;stroke:#ff6b00;stroke-width:3}
+  .hd{fill:#ff6b00;font-family:'Special Elite','Courier New',monospace;font-size:24px}
+  .tx{fill:#f2ead9;font-family:'Courier Prime','Courier New',monospace;font-size:14px}
+  .mu{fill:#a8a091;font-family:'Courier Prime','Courier New',monospace;font-size:12px}
+  .ln{stroke:#2e2e2e;stroke-width:1}.road{stroke:#555;stroke-width:3;fill:none}
+  .route{stroke:#ff6b00;stroke-width:4;fill:none;stroke-dasharray:10 6}
+  .pt{fill:#0a0a0a;stroke:#f2ead9;stroke-width:2}
+  .pa{fill:#0a0a0a;stroke:#ff6b00;stroke-width:2}
+</style>
+<rect class="bg" width="800" height="520"/>
+<rect class="frame" x="16" y="16" width="768" height="488"/>
+<text class="hd" x="40" y="56">EVACUATION MAP · TEMPLATE</text>
+<text class="mu" x="40" y="78">Draw your local area. Mark routes and meeting points. Print and keep with your go-bag.</text>
+<rect class="ln" x="40" y="94" width="720" height="330" fill="none"/>
+<path class="road" d="M60 250 L740 250"/>
+<path class="road" d="M250 110 L250 410"/>
+<path class="road" d="M560 110 L560 410"/>
+<path class="route" d="M120 410 L120 250 L250 250 L250 140"/>
+<path class="route" d="M120 410 L560 410 L560 140"/>
+<rect class="pt" x="100" y="380" width="40" height="40"/>
+<text class="tx" x="104" y="406">HOME</text>
+<circle class="pa" cx="250" cy="140" r="14"/>
+<text class="tx" x="270" y="145">Meeting A</text>
+<circle class="pa" cx="560" cy="140" r="14"/>
+<text class="tx" x="580" y="145">Meeting B</text>
+<rect class="pa" x="610" y="300" width="34" height="34"/>
+<text class="tx" x="654" y="322">Hospital</text>
+<circle class="pt" cx="680" cy="380" r="12"/>
+<text class="tx" x="700" y="385">Water</text>
+<text class="tx" x="60" y="450">Legend:</text>
+<path class="route" d="M120 445 L170 445"/>
+<text class="tx" x="180" y="450">primary route</text>
+<path class="route" d="M330 445 L380 445" style="stroke-dasharray:4 8"/>
+<text class="tx" x="390" y="450">backup route</text>
+<text class="mu" x="40" y="492">Include: home, meeting points, hospital, water, safe high ground, blocked roads and a north arrow.</text>
+</svg>

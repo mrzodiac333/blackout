@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" role="img" aria-labelledby="t d">
+<title id="t">Emergency shelter options</title>
+<desc id="d">Three simple emergency shelter shapes: debris hut, lean-to and tarp A-frame.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:3;fill:none;stroke-linejoin:round}.ac{stroke:#ff6b00;stroke-width:3;fill:none}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:15px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:15px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:12px}
+</style>
+<rect class="bg" width="800" height="320"/>
+<text class="ac2" x="30" y="30">SHELTER BY TIME AVAILABLE</text>
+<g transform="translate(40,60)">
+  <path class="ln" d="M20 150 Q80 10 140 150"/>
+  <path class="ac" d="M55 90 Q80 70 105 90"/>
+  <text class="tx" x="30" y="190">DEBRIS HUT</text>
+  <text class="mu" x="20" y="210">hours · insulation</text>
+</g>
+<g transform="translate(290,60)">
+  <path class="ln" d="M20 150 L130 30 L130 150"/>
+  <path class="ac" d="M20 150 L130 30"/>
+  <text class="tx" x="30" y="190">LEAN-TO</text>
+  <text class="mu" x="20" y="210">30–60 min</text>
+</g>
+<g transform="translate(540,60)">
+  <path class="ln" d="M20 150 L80 40 L140 150"/>
+  <path class="ac" d="M20 150 L80 40 L140 150"/>
+  <text class="tx" x="30" y="190">TARP A-FRAME</text>
+  <text class="mu" x="20" y="210">15 min · wind/rain</text>
+</g>
+<text class="mu" x="30" y="290">Site: high, dry, clear of dead limbs and flood paths. Insulate from the ground first.</text>
+</svg>

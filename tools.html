@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tools &amp; Calculators — BLACKOUT Apocalypse Survival Guide</title>
+<meta name="description" content="Size your water and food storage, budget power, calculate antenna lengths, build a go-bag list, and learn Morse.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="Tools &amp; Calculators — BLACKOUT Apocalypse Survival Guide">
+<meta property="og:description" content="Size your water and food storage, budget power, calculate antenna lengths, build a go-bag list, and learn Morse.">
+<meta property="og:type" content="website">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<link rel="preload" href="assets/fonts/CourierPrime-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/SpecialElite-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+<script src="js/tools.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">BLK</span>
+      <span>BLACKOUT<small>Apocalypse Survival Guide</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul><li><a href="guides.html">Guides</a></li><li><a href="medical.html">Medical</a></li><li><a href="communication.html">Comms</a></li><li><a href="scenarios.html">Scenarios</a></li><li><a href="tools.html" aria-current="page">Tools</a></li><li><a href="emergency-contacts.html">Contacts</a></li></ul>
+    </nav>
+  </div>
+</header>
+<div class="page-head"><div class="wrap"><nav aria-label="Breadcrumb"><ol class="breadcrumbs"><li><a href="index.html">Home</a></li><li aria-current="page">Tools</li></ol></nav>
+  <h1>Tools & Calculators</h1><p class="lede">Everything runs in your browser and works offline. Nothing you type leaves your device.</p></div></div>
+  <div class="wrap layout" id="main">
+    <article class="prose">
+      <section id="water-calc">
+        <h2>Water storage calculator</h2>
+        <div class="tool">
+          <div class="field-row">
+            <div class="field"><label for="w-people">People</label><input id="w-people" type="number" min="1" max="30" value="4" inputmode="numeric"></div>
+            <div class="field"><label for="w-days">Days</label><input id="w-days" type="number" min="1" max="60" value="14" inputmode="numeric"></div>
+            <div class="field"><label for="w-litres">Litres per person per day</label><input id="w-litres" type="number" min="3" max="40" value="10" inputmode="decimal"></div>
+          </div>
+          <div class="tool-output" id="w-out" aria-live="polite"></div>
+        </div>
+      </section>
+      <section id="food-calc">
+        <h2>Food storage calculator</h2>
+        <div class="tool">
+          <div class="field-row">
+            <div class="field"><label for="f-people">People</label><input id="f-people" type="number" min="1" max="30" value="4" inputmode="numeric"></div>
+            <div class="field"><label for="f-days">Days</label><input id="f-days" type="number" min="1" max="365" value="14" inputmode="numeric"></div>
+            <div class="field"><label for="f-kcal">Calories per person per day</label><input id="f-kcal" type="number" min="1200" max="4000" value="2100" inputmode="numeric"></div>
+          </div>
+          <div class="tool-output" id="f-out" aria-live="polite"></div>
+        </div>
+      </section>
+      <section id="power-calc">
+        <h2>Power budget calculator</h2>
+        <div class="tool">
+          <p class="text-muted" style="font-size:.85rem">Add the devices you plan to run. The result estimates daily watt-hours and a suggested battery size with 50% usable capacity.</p>
+          <div id="power-rows"></div>
+          <button class="btn btn--small" type="button" id="power-add">Add device</button>
+          <div class="tool-output" id="p-out" aria-live="polite"></div>
+        </div>
+      </section>
+      <section id="antenna-calc">
+        <h2>Antenna length calculator</h2>
+        <div class="tool">
+          <div class="field-row">
+            <div class="field"><label for="a-freq">Frequency (MHz)</label><input id="a-freq" type="number" min="1" max="6000" step="0.001" value="146" inputmode="decimal"></div>
+            <div class="field"><label for="a-type">Type</label>
+              <select id="a-type">
+                <option value="dipole">Half-wave dipole (total)</option>
+                <option value="leg">Dipole leg (each side)</option>
+                <option value="quarter">Quarter-wave vertical</option>
+                <option value="jpole">J-pole radiator</option>
+                <option value="yagi">Yagi driven element</option>
+              </select>
+            </div>
+          </div>
+          <div class="tool-output" id="a-out" aria-live="polite"></div>
+        </div>
+      </section>
+      <section id="gobag">
+        <h2>Go-bag generator</h2>
+        <div class="tool">
+          <div class="field-row">
+            <div class="field"><label for="g-people">People</label><input id="g-people" type="number" min="1" max="12" value="2" inputmode="numeric"></div>
+            <div class="field"><label for="g-days">Days</label><input id="g-days" type="number" min="1" max="14" value="3" inputmode="numeric"></div>
+            <div class="field"><label for="g-pets">Pets</label><input id="g-pets" type="number" min="0" max="10" value="0" inputmode="numeric"></div>
+          </div>
+          <button class="btn btn--small" type="button" id="g-build">Build list</button>
+          <div class="tool-output" id="g-out" aria-live="polite"></div>
+        </div>
+      </section>
+      <section id="morse">
+        <h2>Morse trainer</h2>
+        <div class="tool">
+          <p class="text-muted" style="font-size:.85rem">Type a short message and hear it in Morse code. Useful for practicing recognition.</p>
+          <div class="field"><label for="m-text">Message</label><input id="m-text" type="text" maxlength="60" value="SOS" autocomplete="off"></div>
+          <div class="field-row">
+            <div class="field"><label for="m-wpm">Speed (WPM)</label><input id="m-wpm" type="number" min="5" max="30" value="12" inputmode="numeric"></div>
+          </div>
+          <button class="btn btn--small" type="button" id="m-play">Play</button>
+          <div class="tool-output" id="m-out" aria-live="polite"></div>
+        </div>
+      </section>
+      <section id="cpr">
+        <h2>CPR compression metronome</h2>
+        <div class="tool">
+          <p class="text-muted" style="font-size:.85rem">A 110 beat-per-minute click to pace chest compressions. The click is a guide, not a substitute for a certified CPR course.</p>
+          <div class="field-row">
+            <div class="field"><label for="cpr-bpm">Beats per minute</label><input id="cpr-bpm" type="number" min="80" max="140" value="110" inputmode="numeric"></div>
+          </div>
+          <button class="btn btn--small" type="button" id="cpr-toggle">Start</button>
+          <div class="tool-output" id="cpr-out" aria-live="polite">Idle.</div>
+        </div>
+      </section>
+      <section id="decision">
+        <h2>Bug in or bug out?</h2>
+        <div class="tool">
+          <p class="text-muted" style="font-size:.85rem">Answer five quick questions for a recommendation. Official evacuation orders always override this tool.</p>
+          <div class="field"><label for="d-threat">Is the threat spreading toward you?</label>
+            <select id="d-threat"><option value="0">No — localised or short</option><option value="1">Yes — spreading</option></select></div>
+          <div class="field"><label for="d-home">Is your home safe and undamaged?</label>
+            <select id="d-home"><option value="0">Yes</option><option value="1">No — damage, flood, fire or gas leak</option></select></div>
+          <div class="field"><label for="d-supplies">Do you have at least 14 days of water, food and medicine?</label>
+            <select id="d-supplies"><option value="0">Yes</option><option value="1">No</option></select></div>
+          <div class="field"><label for="d-vulnerable">Is anyone unable to shelter safely (medical need, disability, late pregnancy)?</label>
+            <select id="d-vulnerable"><option value="0">No</option><option value="1">Yes</option></select></div>
+          <div class="field"><label for="d-order">Has an evacuation order or red warning been issued?</label>
+            <select id="d-order"><option value="0">No</option><option value="1">Yes</option></select></div>
+          <button class="btn btn--small" type="button" id="d-run">Get recommendation</button>
+          <div class="tool-output" id="d-out" aria-live="polite"></div>
+        </div>
+      </section>
+      <section id="print">
+        <h2>Printable cards</h2>
+        <ul>
+          <li><a href="first-aid.html">First-aid quick reference</a> — print the page for the kit.</li>
+          <li><a href="emergency-contacts.html">Family contact card</a>.</li>
+          <li><a href="family-plan.html">Household emergency plan</a>.</li>
+          <li><a href="antenna-plans.html">Antenna dimension sheets</a>.</li>
+        </ul>
+      </section>
+    </article>
+    <aside class="toc no-print" aria-label="On this page">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#water-calc">Water storage</a></li>
+        <li><a href="#food-calc">Food storage</a></li>
+        <li><a href="#power-calc">Power budget</a></li>
+        <li><a href="#antenna-calc">Antenna length</a></li>
+        <li><a href="#gobag">Go-bag generator</a></li>
+        <li><a href="#morse">Morse trainer</a></li>
+        <li><a href="#cpr">CPR metronome</a></li>
+        <li><a href="#decision">Bug in or out</a></li>
+        <li><a href="#print">Printable cards</a></li>
+      </ol>
+    </aside>
+  </div>
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="disclaimer"><strong>Read this first:</strong> This guide is for education and preparedness. It does not replace professional training, medical care, or local emergency instructions. In a real emergency, follow official guidance and call the numbers on the <a href="emergency-contacts.html">contacts page</a>. Radio transmission requires a WPC licence in India; medical content is not a prescription.</p>
+    <div class="footer-grid"><div><h2>Survive</h2><ul><li><a href="water.html">Water</a></li><li><a href="food.html">Food</a></li><li><a href="shelter.html">Shelter</a></li><li><a href="fire.html">Fire</a></li><li><a href="power.html">Power</a></li><li><a href="sanitation.html">Sanitation</a></li></ul></div><div><h2>Health</h2><ul><li><a href="medical.html">Medical hub</a></li><li><a href="first-aid.html">First aid</a></li><li><a href="wound-care.html">Wound care</a></li><li><a href="medications.html">Medications</a></li><li><a href="mental-health.html">Mental health</a></li><li><a href="vulnerable-groups.html">Vulnerable groups</a></li></ul></div><div><h2>Plan & Prepare</h2><ul><li><a href="family-plan.html">Family plan</a></li><li><a href="bug-in-out.html">Bug in or out</a></li><li><a href="documents-finance.html">Documents & money</a></li><li><a href="offline-library.html">Offline library</a></li><li><a href="tools.html">Calculators</a></li><li><a href="dashboard.html">Your dashboard</a></li><li><a href="guides.html">All guides</a></li></ul></div><div><h2>Reference</h2><ul><li><a href="emergency-contacts.html">Emergency contacts</a></li><li><a href="communication.html">Radio & licensing</a></li><li><a href="antenna-plans.html">Antenna plans</a></li><li><a href="glossary.html">Glossary</a></li><li><a href="faq.html">FAQ</a></li><li><a href="sources.html">Sources</a></li></ul></div></div>
+    <div class="footer-bottom">
+      <span>BLACKOUT Apocalypse Survival Guide · Last reviewed 2026-10-19</span>
+      <span><a href="changelog.html">Changelog</a> · <a href="sources.html">Sources</a> · <a href="faq.html">FAQ</a> · <a href="index.html">Home</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+</body>
+</html>

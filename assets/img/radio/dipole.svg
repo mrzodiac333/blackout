@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t d">
+<title id="t">Half-wave dipole antenna plan</title>
+<desc id="d">Diagram of a centre-fed half-wave dipole with total length L, two legs of L over 2, a balun, coax feed line and support ropes.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:3;fill:none}.ac{stroke:#ff6b00;stroke-width:3;fill:none}.dim{stroke:#a8a091;stroke-width:1.5;fill:none;stroke-dasharray:6 4}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:16px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:16px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:13px}.box{fill:#1a1a1a;stroke:#ff6b00;stroke-width:2}
+</style>
+<rect class="bg" width="800" height="420"/>
+<text class="ac2" x="30" y="36">HALF-WAVE DIPOLE · PLAN VIEW</text>
+<line class="ln" x1="170" y1="150" x2="390" y2="150"/>
+<line class="ln" x1="410" y1="150" x2="630" y2="150"/>
+<line class="ac" x1="390" y1="150" x2="410" y2="150"/>
+<rect class="box" x="380" y="138" width="40" height="24" rx="2"/>
+<text class="tx" x="388" y="155">1:1</text>
+<line class="ac" x1="400" y1="162" x2="400" y2="290"/>
+<path class="ac" d="M400 290 q30 30 0 60 q-30 30 0 50"/>
+<text class="ac2" x="418" y="330">COAX</text>
+<text class="mu" x="418" y="350">50 Ω to radio</text>
+<line class="dim" x1="170" y1="110" x2="630" y2="110"/>
+<line class="dim" x1="170" y1="100" x2="170" y2="120"/>
+<line class="dim" x1="630" y1="100" x2="630" y2="120"/>
+<text class="ac2" x="345" y="100">L = 143 ÷ f (MHz)</text>
+<line class="dim" x1="170" y1="180" x2="390" y2="180"/>
+<line class="dim" x1="410" y1="180" x2="630" y2="180"/>
+<text class="mu" x="215" y="202">L/2</text>
+<text class="mu" x="485" y="202">L/2</text>
+<line class="dim" x1="140" y1="130" x2="140" y2="170"/>
+<line class="dim" x1="140" y1="130" x2="160" y2="130"/>
+<line class="dim" x1="140" y1="170" x2="160" y2="170"/>
+<text class="mu" x="20" y="155">FEED POINT</text>
+<line class="mu" x1="110" y1="150" x2="150" y2="150"/>
+<circle class="ac" cx="630" cy="150" r="5"/>
+<circle class="ac" cx="170" cy="150" r="5"/>
+<text class="mu" x="600" y="135">INSULATOR</text>
+<path class="mu" d="M630 150 L680 90"/>
+<path class="mu" d="M170 150 L120 90"/>
+<text class="mu" x="680" y="80">SUPPORT</text>
+<text class="mu" x="90" y="80">SUPPORT</text>
+<text class="mu" x="30" y="395">Cut each leg slightly long, then trim for lowest SWR. Keep the wire clear of metal and power lines.</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" role="img" aria-labelledby="t d">
+<title id="t">Snakebite first aid card</title>
+<desc id="d">Do and do-not list for snakebite first aid, including immobilisation and hospital transport.</desc>
+<style>
+  .bg{fill:#0a0a0a}.frame{fill:none;stroke:#ff6b00;stroke-width:3}
+  .hd{fill:#ff6b00;font-family:'Special Elite','Courier New',monospace;font-size:26px}
+  .tx{fill:#f2ead9;font-family:'Courier Prime','Courier New',monospace;font-size:15px}
+  .ac{fill:#ff6b00;font-family:'Courier Prime','Courier New',monospace;font-size:16px;font-weight:bold}
+  .bad{fill:#ff3b30;font-family:'Courier Prime','Courier New',monospace;font-size:16px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime','Courier New',monospace;font-size:12px}
+  .ln{stroke:#2e2e2e;stroke-width:1}
+</style>
+<rect class="bg" width="800" height="440"/>
+<rect class="frame" x="16" y="16" width="768" height="408"/>
+<text class="hd" x="40" y="60">SNAKEBITE · DO THIS</text>
+<line class="ln" x1="40" y1="78" x2="760" y2="78"/>
+<text class="tx" x="40" y="110">1. Call 112 / get to hospital immediately.</text>
+<text class="tx" x="40" y="140">2. Keep the person calm and still.</text>
+<text class="tx" x="40" y="170">3. Immobilise the limb at or below heart level.</text>
+<text class="tx" x="40" y="200">4. Remove rings, watches and tight clothing.</text>
+<text class="tx" x="40" y="230">5. Note the time of the bite and symptoms.</text>
+<text class="tx" x="40" y="260">6. Antivenom is hospital treatment. Go there.</text>
+<text class="bad" x="40" y="310">DO NOT</text>
+<text class="tx" x="40" y="338">Cut, suck, burn, tourniquet or apply ice.</text>
+<text class="tx" x="40" y="364">Apply herbs, ash, chilli or turmeric.</text>
+<text class="tx" x="40" y="390">Try to catch or kill the snake.</text>
+<text class="mu" x="440" y="310">India: snakebite is a medical emergency.</text>
+<text class="mu" x="440" y="330">Most bites occur at night, on the lower leg,</text>
+<text class="mu" x="440" y="350">during monsoon. Use a torch and closed shoes.</text>
+</svg>

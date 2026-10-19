@@ -1,0 +1,23 @@
+{
+  "name": "BLACKOUT — Apocalypse Survival Guide",
+  "short_name": "BLACKOUT",
+  "description": "Offline field manual for water, food, shelter, medicine, radio and disaster response in India.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Emergency contacts", "url": "emergency-contacts.html" },
+    { "name": "First aid", "url": "first-aid.html" },
+    { "name": "Water", "url": "water.html" },
+    { "name": "All guides", "url": "guides.html" }
+  ]
+}

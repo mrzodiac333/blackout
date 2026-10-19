@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="t d">
+<title id="t">Solar and battery communications station diagram</title>
+<desc id="d">Block diagram of a solar panel charging a battery through a controller, feeding a radio and a USB charging point.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:3;fill:none}.ac{stroke:#ff6b00;stroke-width:3;fill:none}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:15px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:15px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:12px}
+  .box{fill:#1a1a1a;stroke:#f2ead9;stroke-width:2}
+  .boxac{fill:#1a1a1a;stroke:#ff6b00;stroke-width:2}
+</style>
+<rect class="bg" width="800" height="360"/>
+<text class="ac2" x="30" y="32">SOLAR COMMS STATION · BLOCK DIAGRAM</text>
+<rect class="box" x="40" y="80" width="150" height="80" rx="3"/>
+<text class="tx" x="62" y="115">SOLAR PANEL</text><text class="mu" x="62" y="138">18 V nominal</text>
+<rect class="boxac" x="250" y="80" width="150" height="80" rx="3"/>
+<text class="tx" x="276" y="115">CONTROLLER</text><text class="mu" x="270" y="138">MPPT/PWM</text>
+<rect class="box" x="460" y="80" width="150" height="80" rx="3"/>
+<text class="tx" x="490" y="115">BATTERY</text><text class="mu" x="480" y="138">LiFePO4 / lead</text>
+<rect class="boxac" x="620" y="220" width="140" height="80" rx="3"/>
+<text class="tx" x="648" y="255">RADIO</text><text class="mu" x="644" y="278">12 V, fused</text>
+<rect class="box" x="420" y="220" width="140" height="80" rx="3"/>
+<text class="tx" x="448" y="255">USB / 5 V</text><text class="mu" x="440" y="278">phones, SDR</text>
+<path class="ln" d="M190 120 L250 120"/>
+<path class="ln" d="M400 120 L460 120"/>
+<path class="ac" d="M535 160 L535 260 L620 260"/>
+<path class="ac" d="M490 160 L490 260"/>
+<path class="ac" d="M460 230 L420 260"/>
+<circle class="ac" cx="535" cy="200" r="6"/>
+<text class="mu" x="548" y="204">FUSE</text>
+<path class="ln" d="M400 120 L430 120 L430 220"/>
+<text class="mu" x="40" y="200">Panel: tilt toward the sun, keep shaded cells clear.</text>
+<text class="mu" x="40" y="222">Battery: ventilate lead-acid; never charge below 0 °C without a low-temp cut-off.</text>
+<text class="mu" x="40" y="244">Every positive feed: fuse close to the battery.</text>
+<text class="mu" x="30" y="330">Ground the antenna mast separately. Do not run coax through standing water.</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-labelledby="t d">
+<title id="t">SWR meter and coax connection diagram</title>
+<desc id="d">Diagram showing radio, SWR meter, coax cable, antenna and grounding, with safe SWR thresholds.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:3;fill:none}.ac{stroke:#ff6b00;stroke-width:3;fill:none}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:15px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:15px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:12px}
+  .box{fill:#1a1a1a;stroke:#f2ead9;stroke-width:2}.boxac{fill:#1a1a1a;stroke:#ff6b00;stroke-width:2}
+</style>
+<rect class="bg" width="800" height="340"/>
+<text class="ac2" x="30" y="32">SWR TEST SETUP</text>
+<rect class="box" x="40" y="90" width="130" height="80" rx="3"/><text class="tx" x="70" y="138">RADIO</text>
+<rect class="boxac" x="240" y="90" width="150" height="80" rx="3"/><text class="tx" x="258" y="130">SWR METER</text><text class="mu" x="272" y="152">calibrate first</text>
+<rect class="box" x="460" y="90" width="150" height="80" rx="3"/><text class="tx" x="478" y="130">ANTENNA</text><text class="mu" x="478" y="152">+ balun</text>
+<path class="ln" d="M170 130 L240 130"/><path class="ln" d="M390 130 L460 130"/>
+<path class="ac" d="M535 170 L535 230 L620 230"/>
+<path class="ac" d="M620 230 L620 280"/>
+<path class="ac" d="M590 280 L650 280"/>
+<path class="ac" d="M600 292 L640 292"/>
+<text class="mu" x="650" y="245">EARTH ROD</text>
+<text class="mu" x="650" y="265">separate from mains</text>
+<text class="mu" x="40" y="240">SWR under 1.5:1 = good · 1.5–2.0:1 = usable · above 2.0:1 = stop and fix</text>
+<text class="mu" x="40" y="262">Transmit only into a matched antenna. Never key up with no antenna connected.</text>
+<text class="mu" x="40" y="300">Test at low power first. Keep the antenna away from people while transmitting.</text>
+<text class="mu" x="40" y="322">Do not test near power lines, in rain, or during lightning.</text>
+</svg>

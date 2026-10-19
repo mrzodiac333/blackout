@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-labelledby="t d">
+<title id="t">Crystal radio receiver schematic</title>
+<desc id="d">Schematic of a simple crystal radio: antenna, coil, tuning capacitor, germanium diode and high-impedance earphone.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:2.5;fill:none}.ac{stroke:#ff6b00;stroke-width:2.5;fill:none}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:14px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:15px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:12px}
+</style>
+<rect class="bg" width="800" height="340"/>
+<text class="ac2" x="30" y="32">CRYSTAL RADIO · RECEIVE ONLY · NO POWER NEEDED</text>
+<path class="ln" d="M40 200 L110 200 M110 200 L110 90 M110 90 L180 90"/>
+<text class="mu" x="42" y="190">ANTENNA</text>
+<path class="ln" d="M40 200 L40 250 M20 250 L60 250 M28 262 L52 262 M36 274 L44 274"/>
+<text class="mu" x="20" y="294">EARTH</text>
+<path class="ac" d="M180 90 q-30 0 -30 30 q0 30 30 30 q30 0 30 -30 q0 -30 -30 -30"/>
+<path class="ac" d="M180 150 L180 200"/>
+<text class="mu" x="150" y="120">COIL</text><text class="mu" x="140" y="138">L1</text>
+<path class="ln" d="M180 200 L300 200"/>
+<path class="ln" d="M300 200 L300 140 M300 140 L300 170"/>
+<path class="ln" d="M285 170 L315 170 M285 185 L315 185"/>
+<text class="mu" x="320" y="180">TUNING C</text>
+<path class="ln" d="M300 200 L300 250 L380 250"/>
+<path class="ac" d="M380 250 L410 250 L410 235 L440 235 L440 250 L470 250"/>
+<text class="mu" x="385" y="225">DIODE (Ge)</text>
+<path class="ln" d="M470 250 L560 250"/>
+<path class="ln" d="M560 250 L560 200 M560 200 L600 200"/>
+<path class="ln" d="M560 200 L600 200 M560 220 L600 220"/>
+<text class="mu" x="610" y="215">EARPHONE</text>
+<text class="mu" x="610" y="233">2 kΩ+</text>
+<path class="ln" d="M600 210 L640 210 L640 290 L180 290 L180 250"/>
+<text class="mu" x="40" y="320">Long outdoor wire improves reception. A germanium diode works with weak signals; silicon needs more.</text>
+</svg>

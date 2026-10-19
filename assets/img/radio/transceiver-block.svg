@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" role="img" aria-labelledby="t d">
+<title id="t">Simple transceiver block diagram</title>
+<desc id="d">Block diagram showing antenna switch, bandpass filter, mixer, local oscillator, IF amplifier, detector and audio stages.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:2.5;fill:none}.ac{stroke:#ff6b00;stroke-width:2.5;fill:none}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:13px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:15px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:11px}
+  .box{fill:#1a1a1a;stroke:#f2ead9;stroke-width:1.8}.boxac{fill:#1a1a1a;stroke:#ff6b00;stroke-width:1.8}
+</style>
+<rect class="bg" width="800" height="320"/>
+<text class="ac2" x="30" y="30">SIMPLE SSB/CW TRANSCEIVER · BLOCKS</text>
+<rect class="box" x="30" y="80" width="95" height="60" rx="2"/><text class="tx" x="42" y="115">ANTENNA</text>
+<rect class="box" x="150" y="80" width="105" height="60" rx="2"/><text class="tx" x="160" y="108">BANDPASS</text><text class="mu" x="175" y="126">filter</text>
+<rect class="boxac" x="280" y="80" width="95" height="60" rx="2"/><text class="tx" x="300" y="115">MIXER</text>
+<rect class="boxac" x="280" y="190" width="95" height="60" rx="2"/><text class="tx" x="288" y="218">LOCAL OSC</text><text class="mu" x="292" y="236">VFO / Si5351</text>
+<rect class="box" x="410" y="80" width="95" height="60" rx="2"/><text class="tx" x="428" y="115">IF AMP</text>
+<rect class="box" x="540" y="80" width="95" height="60" rx="2"/><text class="tx" x="550" y="108">DETECTOR</text><text class="mu" x="558" y="126">/ product det</text>
+<rect class="box" x="670" y="80" width="100" height="60" rx="2"/><text class="tx" x="690" y="108">AUDIO</text><text class="mu" x="680" y="126">+ speaker</text>
+<path class="ln" d="M125 110 L150 110"/><path class="ln" d="M255 110 L280 110"/><path class="ln" d="M375 110 L410 110"/><path class="ln" d="M505 110 L540 110"/><path class="ln" d="M635 110 L670 110"/>
+<path class="ac" d="M327 140 L327 190"/>
+<text class="mu" x="340" y="170">carrier</text>
+<path class="ac" d="M185 140 L185 250 L250 250"/>
+<text class="mu" x="195" y="268">TX path: mic → filter → mixer → PA</text>
+<path class="ac" d="M185 250 L185 300 L700 300 L700 170"/>
+<text class="mu" x="410" y="292">T/R switch and low-pass filter on the output</text>
+<text class="mu" x="30" y="60">Kit builds are legal to own; transmitting still requires a WPC licence.</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t d">
+<title id="t">Three-element tape-measure Yagi plan</title>
+<desc id="d">Top view of a three-element Yagi with reflector, driven element and director mounted on a boom, with element lengths and spacing.</desc>
+<style>
+  .bg{fill:#0a0a0a}.el{stroke:#f2ead9;stroke-width:5;fill:none;stroke-linecap:round}.boom{stroke:#a8a091;stroke-width:6;fill:none}.ac{stroke:#ff6b00;stroke-width:3;fill:none}.dim{stroke:#a8a091;stroke-width:1.5;fill:none;stroke-dasharray:6 4}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:16px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:16px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:13px}
+</style>
+<rect class="bg" width="800" height="420"/>
+<text class="ac2" x="30" y="36">3-ELEMENT YAGI · 146 MHz</text>
+<line class="boom" x1="150" y1="230" x2="650" y2="230"/>
+<line class="el" x1="150" y1="130" x2="150" y2="330"/>
+<line class="el" x1="350" y1="140" x2="350" y2="320"/>
+<line class="el" x1="540" y1="155" x2="540" y2="305"/>
+<rect class="ac" x="338" y="220" width="24" height="20" rx="2"/>
+<text class="ac2" x="366" y="238">FEED</text>
+<text class="mu" x="118" y="360">REFLECTOR</text>
+<text class="mu" x="318" y="350">DRIVEN</text>
+<text class="mu" x="510" y="340">DIRECTOR</text>
+<line class="dim" x1="150" y1="380" x2="350" y2="380"/>
+<text class="mu" x="205" y="400">0.2 λ ≈ 410 mm</text>
+<line class="dim" x1="350" y1="380" x2="540" y2="380"/>
+<text class="mu" x="390" y="400">0.15 λ ≈ 308 mm</text>
+<path class="ac" d="M620 190 L700 190"/>
+<path class="ac" d="M690 180 L700 190 L690 200"/>
+<text class="ac2" x="650" y="175">DX</text>
+<text class="mu" x="30" y="36"> </text>
+<text class="mu" x="560" y="120">Elements: 1.0 / 0.95 / 0.9 × 1000 mm</text>
+<text class="mu" x="30" y="40" style="opacity:0">.</text>
+<text class="mu" x="30" y="60" style="opacity:0">.</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="t d">
+<title id="t">Food preservation methods chart</title>
+<desc id="d">Chart comparing drying, salting, smoking, canning, pickling and root storage with shelf life and key risks.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#2e2e2e;stroke-width:1}.hd{fill:#1a1a1a}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:14px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:15px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:13px}
+</style>
+<rect class="bg" width="800" height="360"/>
+<text class="ac2" x="30" y="34">PRESERVATION AT A GLANCE</text>
+<rect class="hd" x="30" y="56" width="200" height="34"/><rect class="hd" x="230" y="56" width="150" height="34"/><rect class="hd" x="380" y="56" width="180" height="34"/><rect class="hd" x="560" y="56" width="210" height="34"/>
+<line class="ln" x1="30" y1="90" x2="770" y2="90"/>
+<text class="ac2" x="42" y="79">METHOD</text><text class="ac2" x="242" y="79">SHELF LIFE</text><text class="ac2" x="392" y="79">BEST FOR</text><text class="ac2" x="572" y="79">KEY RISK</text>
+<g class="tx">
+  <text x="42" y="120">Drying</text><text x="242" y="120">6–12 months</text><text x="392" y="120">meat, fruit, herbs</text><text x="572" y="120">mould if humid</text>
+  <text x="42" y="152">Salting</text><text x="242" y="152">3–12 months</text><text x="392" y="152">fish, meat</text><text x="572" y="152">uneven cure</text>
+  <text x="42" y="184">Smoking</text><text x="242" y="184">weeks–months</text><text x="392" y="184">fish, meat</text><text x="572" y="184">not a stand-alone</text>
+  <text x="42" y="216">Pressure canning</text><text x="242" y="216">1–5 years</text><text x="392" y="216">low-acid foods</text><text x="572" y="216">botulism</text>
+  <text x="42" y="248">Pickling</text><text x="242" y="248">months</text><text x="392" y="248">vegetables</text><text x="572" y="248">weak acidity</text>
+  <text x="42" y="280">Cool root store</text><text x="242" y="280">2–6 months</text><text x="392" y="280">potato, onion, carrot</text><text x="572" y="280">rot, rodents</text>
+</g>
+<text class="mu" x="30" y="330">When in doubt, throw it out. Never taste-test suspect preserves.</text>
+</svg>

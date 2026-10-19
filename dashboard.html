@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Dashboard — BLACKOUT Apocalypse Survival Guide</title>
+<meta name="description" content="Saved bookmarks, checklist progress and notes — with export, import and clear-data controls.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="Your Dashboard — BLACKOUT Apocalypse Survival Guide">
+<meta property="og:description" content="Saved bookmarks, checklist progress and notes — with export, import and clear-data controls.">
+<meta property="og:type" content="website">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<link rel="preload" href="assets/fonts/CourierPrime-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/SpecialElite-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+<script src="js/dashboard.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">BLK</span>
+      <span>BLACKOUT<small>Apocalypse Survival Guide</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul><li><a href="guides.html">Guides</a></li><li><a href="medical.html">Medical</a></li><li><a href="communication.html">Comms</a></li><li><a href="scenarios.html">Scenarios</a></li><li><a href="tools.html">Tools</a></li><li><a href="emergency-contacts.html">Contacts</a></li></ul>
+    </nav>
+  </div>
+</header>
+<div class="page-head"><div class="wrap"><nav aria-label="Breadcrumb"><ol class="breadcrumbs"><li><a href="index.html">Home</a></li><li aria-current="page">Dashboard</li></ol></nav>
+  <h1>Your Dashboard</h1><p class="lede">Everything here is stored in this browser only. Export a backup before clearing your browser data or changing devices.</p></div></div>
+  <div class="wrap" style="padding-bottom:4rem" id="main">
+    <div class="grid grid--2">
+      <section class="tool"><h2 style="font-family:var(--font-body);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)">Saved guides</h2><div id="dash-bookmarks" class="text-muted">No bookmarks yet.</div></section>
+      <section class="tool"><h2 style="font-family:var(--font-body);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)">Checklist progress</h2><div id="dash-checks" class="text-muted">No checklist progress yet.</div></section>
+    </div>
+    <section class="tool" style="margin-top:1.2rem"><h2 style="font-family:var(--font-body);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)">Your notes</h2><div id="dash-notes" class="text-muted">No notes yet.</div></section>
+    <section class="tool" style="margin-top:1.2rem">
+      <h2 style="font-family:var(--font-body);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)">Backup</h2>
+      <p class="text-muted" style="font-size:.85rem">Export bookmarks, progress and notes as a JSON file. Import restores them on this device.</p>
+      <div class="field-row">
+        <button class="btn btn--small" type="button" id="dash-export">Export backup</button>
+        <label class="btn btn--ghost btn--small" for="dash-import" style="cursor:pointer">Import backup</label>
+        <input class="visually-hidden" id="dash-import" type="file" accept="application/json,.json">
+        <button class="btn btn--ghost btn--small" type="button" id="dash-clear">Clear all data</button>
+      </div>
+      <div class="tool-output" id="dash-out" aria-live="polite"></div>
+    </section>
+  </div>
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="disclaimer"><strong>Read this first:</strong> This guide is for education and preparedness. It does not replace professional training, medical care, or local emergency instructions. In a real emergency, follow official guidance and call the numbers on the <a href="emergency-contacts.html">contacts page</a>. Radio transmission requires a WPC licence in India; medical content is not a prescription.</p>
+    <div class="footer-grid"><div><h2>Survive</h2><ul><li><a href="water.html">Water</a></li><li><a href="food.html">Food</a></li><li><a href="shelter.html">Shelter</a></li><li><a href="fire.html">Fire</a></li><li><a href="power.html">Power</a></li><li><a href="sanitation.html">Sanitation</a></li></ul></div><div><h2>Health</h2><ul><li><a href="medical.html">Medical hub</a></li><li><a href="first-aid.html">First aid</a></li><li><a href="wound-care.html">Wound care</a></li><li><a href="medications.html">Medications</a></li><li><a href="mental-health.html">Mental health</a></li><li><a href="vulnerable-groups.html">Vulnerable groups</a></li></ul></div><div><h2>Plan & Prepare</h2><ul><li><a href="family-plan.html">Family plan</a></li><li><a href="bug-in-out.html">Bug in or out</a></li><li><a href="documents-finance.html">Documents & money</a></li><li><a href="offline-library.html">Offline library</a></li><li><a href="tools.html">Calculators</a></li><li><a href="dashboard.html">Your dashboard</a></li><li><a href="guides.html">All guides</a></li></ul></div><div><h2>Reference</h2><ul><li><a href="emergency-contacts.html">Emergency contacts</a></li><li><a href="communication.html">Radio & licensing</a></li><li><a href="antenna-plans.html">Antenna plans</a></li><li><a href="glossary.html">Glossary</a></li><li><a href="faq.html">FAQ</a></li><li><a href="sources.html">Sources</a></li></ul></div></div>
+    <div class="footer-bottom">
+      <span>BLACKOUT Apocalypse Survival Guide · Last reviewed 2026-10-19</span>
+      <span><a href="changelog.html">Changelog</a> · <a href="sources.html">Sources</a> · <a href="faq.html">FAQ</a> · <a href="index.html">Home</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" role="img" aria-labelledby="t d">
+<title id="t">Three fire lay diagrams</title>
+<desc id="d">Top-down diagrams of teepee, log cabin and star fire lays.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:4;fill:none;stroke-linecap:round}.ac{stroke:#ff6b00;stroke-width:3;fill:none}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:15px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:15px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:12px}
+</style>
+<rect class="bg" width="800" height="300"/>
+<text class="ac2" x="30" y="30">THREE RELIABLE FIRE LAYS</text>
+<g transform="translate(40,60)">
+  <path class="ln" d="M80 20 L130 150 M80 20 L30 150 M80 20 L80 155"/>
+  <circle class="ac" cx="80" cy="120" r="12"/>
+  <text class="tx" x="30" y="190">TEEPEE</text>
+  <text class="mu" x="20" y="210">tinder inside</text>
+</g>
+<g transform="translate(290,60)">
+  <path class="ln" d="M30 40 L130 40 M30 80 L130 80 M30 120 L130 120 M50 20 L50 140 M110 20 L110 140"/>
+  <circle class="ac" cx="80" cy="80" r="12"/>
+  <text class="tx" x="30" y="190">LOG CABIN</text>
+  <text class="mu" x="20" y="210">air gaps</text>
+</g>
+<g transform="translate(540,60)">
+  <path class="ln" d="M80 70 L20 30 M80 70 L20 110 M80 70 L140 30 M80 70 L140 110"/>
+  <circle class="ac" cx="80" cy="70" r="14"/>
+  <text class="tx" x="30" y="190">STAR</text>
+  <text class="mu" x="20" y="210">feed inward</text>
+</g>
+<text class="mu" x="30" y="280">Clear a 3 m circle to bare soil. Keep water and a shovel within reach. Never burn inside a tent.</text>
+</svg>

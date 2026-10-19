@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t d">
+<title id="t">Quarter-wave ground plane antenna plan</title>
+<desc id="d">Vertical quarter-wave radiator with four sloping radials at about 45 degrees, fed with coax at the base.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:3;fill:none}.ac{stroke:#ff6b00;stroke-width:3;fill:none}.dim{stroke:#a8a091;stroke-width:1.5;fill:none;stroke-dasharray:6 4}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:16px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:16px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:13px}
+</style>
+<rect class="bg" width="800" height="420"/>
+<text class="ac2" x="30" y="36">QUARTER-WAVE GROUND PLANE · ELEVATION</text>
+<line class="ln" x1="400" y1="70" x2="400" y2="290"/>
+<circle class="ac" cx="400" cy="70" r="5"/>
+<rect class="ac" x="388" y="280" width="24" height="20" rx="2"/>
+<text class="ac2" x="420" y="296">SO-239</text>
+<line class="ac" x1="400" y1="300" x2="400" y2="380"/>
+<text class="mu" x="412" y="360">COAX</text>
+<line class="ln" x1="400" y1="290" x2="220" y2="170"/>
+<line class="ln" x1="400" y1="290" x2="580" y2="170"/>
+<line class="ln" x1="400" y1="290" x2="300" y2="330"/>
+<line class="ln" x1="400" y1="290" x2="500" y2="330"/>
+<circle class="ac" cx="220" cy="170" r="4"/>
+<circle class="ac" cx="580" cy="170" r="4"/>
+<circle class="ac" cx="300" cy="330" r="4"/>
+<circle class="ac" cx="500" cy="330" r="4"/>
+<line class="dim" x1="400" y1="70" x2="640" y2="70"/>
+<line class="dim" x1="400" y1="60" x2="400" y2="80"/>
+<line class="dim" x1="640" y1="60" x2="640" y2="80"/>
+<text class="ac2" x="440" y="60">RADIATOR = 71.5 ÷ f (MHz)</text>
+<line class="dim" x1="400" y1="290" x2="250" y2="190"/>
+<text class="mu" x="210" y="215">RADIAL ≈ RADIATOR × 1.05</text>
+<text class="mu" x="580" y="210">4 radials at ≈45°</text>
+<text class="mu" x="30" y="400">Mount the connector above ground, seal it, and slope radials down. Do not touch power lines.</text>
+</svg>

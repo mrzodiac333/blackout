@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Power: Solar, Batteries, Generators — BLACKOUT Apocalypse Survival Guide</title>
+<meta name="description" content="Keep phones, lights and medical devices running during an outage with solar, battery banks and safe generator use.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="Power: Solar, Batteries, Generators — BLACKOUT Apocalypse Survival Guide">
+<meta property="og:description" content="Keep phones, lights and medical devices running during an outage with solar, battery banks and safe generator use.">
+<meta property="og:type" content="website">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<link rel="preload" href="assets/fonts/CourierPrime-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/SpecialElite-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">BLK</span>
+      <span>BLACKOUT<small>Apocalypse Survival Guide</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul><li><a href="guides.html">Guides</a></li><li><a href="medical.html">Medical</a></li><li><a href="communication.html">Comms</a></li><li><a href="scenarios.html">Scenarios</a></li><li><a href="tools.html">Tools</a></li><li><a href="emergency-contacts.html">Contacts</a></li></ul>
+    </nav>
+  </div>
+</header>
+<div class="page-head"><div class="wrap"><nav aria-label="Breadcrumb"><ol class="breadcrumbs"><li><a href="index.html">Home</a></li><li><a href="guides.html?cat=survival">Survival</a></li><li aria-current="page">Power</li></ol></nav><h1>Power: Solar, Batteries, Generators</h1><p class="lede">Keep phones, lights and medical devices running during an outage with solar, battery banks and safe generator use.</p>
+  <div class="page-meta">
+    <span><span class="dot" aria-hidden="true"></span>Survival</span>
+    <span>Last reviewed 2026-10-19</span>
+    <span>9 min read</span>
+    <button class="bookmark-btn no-print" type="button" data-bookmark="power" aria-pressed="false">Save</button>
+    <button class="bookmark-btn no-print" type="button" data-print>Print</button>
+  </div></div></div>
+<div class="wrap layout"><article class="prose" id="main">
+<section id="overview"><p>Modern survival is mostly about <strong>electrons</strong>: light, communications, refrigeration for medicine, and pumping water. Plan for a two-week outage. The safest system is small, solar-charged and fuse-protected.</p></section>
+<h2 id="checklist">Priority checklist</h2><div class="checklist-progress" data-progress="power"><span>0 / 6 done</span><span class="progress-track"><span class="progress-bar"></span></span></div>
+<ul class="checklist" data-checklist="power"><li><label><input type="checkbox" data-check="power-0"><span>Power banks charged and rotated</span></label></li><li><label><input type="checkbox" data-check="power-1"><span>A small solar panel and charge controller</span></label></li><li><label><input type="checkbox" data-check="power-2"><span>Headlamps and spare cells</span></label></li><li><label><input type="checkbox" data-check="power-3"><span>Fuses and correct cable sizes</span></label></li><li><label><input type="checkbox" data-check="power-4"><span>A plan for medicines that need refrigeration</span></label></li><li><label><input type="checkbox" data-check="power-5"><span>No generators indoors, ever</span></label></li></ul><p class="text-muted" style="font-size:.8rem">Progress is saved on this device only.</p>
+<section id="budget"><h2>Start with a power budget</h2><div class="table-scroll"><table><caption>Typical small loads. Multiply watts by hours used per day to get watt-hours.</caption><thead><tr><th scope="col">Device</th><th scope="col">Power</th><th scope="col">Daily use</th><th scope="col">Watt-hours</th></tr></thead><tbody><tr><td>Phone charging</td><td>10 W</td><td>2 hours</td><td>20</td></tr><tr><td>LED lamp</td><td>5 W</td><td>5 hours</td><td>25</td></tr><tr><td>Headlamp</td><td>2 W</td><td>3 hours</td><td>6</td></tr><tr><td>Radio (receive)</td><td>3 W</td><td>6 hours</td><td>18</td></tr><tr><td>Laptop</td><td>45 W</td><td>2 hours</td><td>90</td></tr><tr><td>Small fan</td><td>20 W</td><td>6 hours</td><td>120</td></tr></tbody></table></div>
+<p>A 20,000 mAh power bank stores roughly <strong>74 Wh</strong> — enough for phones and lights for days, not for a fan or fridge. Use the <a href="tools.html">power calculator</a> to size a system.</p></section>
+<section id="solar"><h2>Small solar setup</h2><figure class="figure"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-labelledby="t d">
+<title id="t">Solar and battery communications station diagram</title>
+<desc id="d">Block diagram of a solar panel charging a battery through a controller, feeding a radio and a USB charging point.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:3;fill:none}.ac{stroke:#ff6b00;stroke-width:3;fill:none}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:15px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:15px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:12px}
+  .box{fill:#1a1a1a;stroke:#f2ead9;stroke-width:2}
+  .boxac{fill:#1a1a1a;stroke:#ff6b00;stroke-width:2}
+</style>
+<rect class="bg" width="800" height="360"/>
+<text class="ac2" x="30" y="32">SOLAR COMMS STATION · BLOCK DIAGRAM</text>
+<rect class="box" x="40" y="80" width="150" height="80" rx="3"/>
+<text class="tx" x="62" y="115">SOLAR PANEL</text><text class="mu" x="62" y="138">18 V nominal</text>
+<rect class="boxac" x="250" y="80" width="150" height="80" rx="3"/>
+<text class="tx" x="276" y="115">CONTROLLER</text><text class="mu" x="270" y="138">MPPT/PWM</text>
+<rect class="box" x="460" y="80" width="150" height="80" rx="3"/>
+<text class="tx" x="490" y="115">BATTERY</text><text class="mu" x="480" y="138">LiFePO4 / lead</text>
+<rect class="boxac" x="620" y="220" width="140" height="80" rx="3"/>
+<text class="tx" x="648" y="255">RADIO</text><text class="mu" x="644" y="278">12 V, fused</text>
+<rect class="box" x="420" y="220" width="140" height="80" rx="3"/>
+<text class="tx" x="448" y="255">USB / 5 V</text><text class="mu" x="440" y="278">phones, SDR</text>
+<path class="ln" d="M190 120 L250 120"/>
+<path class="ln" d="M400 120 L460 120"/>
+<path class="ac" d="M535 160 L535 260 L620 260"/>
+<path class="ac" d="M490 160 L490 260"/>
+<path class="ac" d="M460 230 L420 260"/>
+<circle class="ac" cx="535" cy="200" r="6"/>
+<text class="mu" x="548" y="204">FUSE</text>
+<path class="ln" d="M400 120 L430 120 L430 220"/>
+<text class="mu" x="40" y="200">Panel: tilt toward the sun, keep shaded cells clear.</text>
+<text class="mu" x="40" y="222">Battery: ventilate lead-acid; never charge below 0 °C without a low-temp cut-off.</text>
+<text class="mu" x="40" y="244">Every positive feed: fuse close to the battery.</text>
+<text class="mu" x="30" y="330">Ground the antenna mast separately. Do not run coax through standing water.</text>
+</svg>
+<figcaption><strong>Solar charging chain.</strong> Panel → controller → battery → fused loads. Every positive feed is fused close to the battery.</figcaption></figure>
+<ul>
+<li><strong>Panel:</strong> a 50–100 W folding panel can charge a battery bank and run small loads.</li>
+<li><strong>Controller:</strong> MPPT is more efficient; PWM is cheaper. Match controller to panel voltage and battery chemistry.</li>
+<li><strong>Battery:</strong> LiFePO4 is lighter and safer for indoor use; lead-acid is cheaper but needs ventilation.</li>
+<li><strong>Inverter:</strong> only if you need mains AC; expect losses and buy a pure sine-wave unit.</li>
+</ul>
+<div class="callout callout--warning"><span class="callout-title">Lithium safety</span><p>Use quality cells and a proper BMS. Never charge a cold Li-ion pack, never puncture or crush cells, and never charge unattended on a flammable surface. Swollen cells are a fire risk — isolate and dispose of them safely.</p></div></section>
+<section id="generator"><h2>Generators and fuel</h2><ul>
+<li>Run generators <strong>outdoors only</strong>, at least 5 metres from doors and windows, with the exhaust pointing away.</li>
+<li>Never store fuel indoors or near a flame; use approved containers and rotate stock.</li>
+<li>Let the generator cool before refuelling.</li>
+<li>Use a CO alarm in the house if you run any fuel-burning appliance.</li>
+<li>Connect appliances directly or use a proper transfer switch — never backfeed a socket.</li>
+</ul></section>
+<section id="conservation"><h2>Making power last</h2><ul>
+<li>Turn off background apps, Wi-Fi and Bluetooth; use airplane mode when not needed.</li>
+<li>Lower screen brightness and shorten screen timeout.</li>
+<li>Charge devices during peak solar hours rather than at night.</li>
+<li>Use one central charging station and keep it off the floor.</li>
+<li>Prefer headlamps over room lights; light only the space you use.</li>
+<li>Keep devices cool — heat degrades batteries.</li>
+</ul>
+<p>Related: <a href="communication.html">Radio</a> · <a href="medications.html">Medication storage</a> · <a href="tools.html">Power calculator</a></p></section>
+<section id="notes" class="no-print"><h2>Your notes</h2><p class="text-muted" style="font-size:.85rem">Saved on this device only. Use the <a href="dashboard.html">dashboard</a> to export or back up your data.</p><div class="field"><label class="visually-hidden" for="page-notes">Notes for this guide</label><textarea id="page-notes" data-notes="power" placeholder="Questions, local phone numbers, supplies to buy…"></textarea></div><p class="text-muted" id="notes-status" style="font-size:.75rem;min-height:1.2em"></p></section>
+<section id="related"><h2>Related guides</h2><ul class="tag-list"><li><a href="communication.html">Communication</a></li><li><a href="tools.html">Power calculator</a></li><li><a href="documents-finance.html">Documents and money</a></li></ul></section>
+<p class="text-muted" style="font-size:.8rem;margin-top:2.5rem">Last reviewed 2026-10-19. Corrections welcome — see <a href="sources.html">sources</a>.</p>
+</article><aside class="toc no-print" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol><li><a href="#budget">Start with a power budget</a></li><li><a href="#solar">Small solar setup</a></li><li><a href="#generator">Generators and fuel</a></li><li><a href="#conservation">Making power last</a></li></ol>
+  </aside></div><footer class="site-footer">
+  <div class="wrap">
+    <p class="disclaimer"><strong>Read this first:</strong> This guide is for education and preparedness. It does not replace professional training, medical care, or local emergency instructions. In a real emergency, follow official guidance and call the numbers on the <a href="emergency-contacts.html">contacts page</a>. Radio transmission requires a WPC licence in India; medical content is not a prescription.</p>
+    <div class="footer-grid"><div><h2>Survive</h2><ul><li><a href="water.html">Water</a></li><li><a href="food.html">Food</a></li><li><a href="shelter.html">Shelter</a></li><li><a href="fire.html">Fire</a></li><li><a href="power.html">Power</a></li><li><a href="sanitation.html">Sanitation</a></li></ul></div><div><h2>Health</h2><ul><li><a href="medical.html">Medical hub</a></li><li><a href="first-aid.html">First aid</a></li><li><a href="wound-care.html">Wound care</a></li><li><a href="medications.html">Medications</a></li><li><a href="mental-health.html">Mental health</a></li><li><a href="vulnerable-groups.html">Vulnerable groups</a></li></ul></div><div><h2>Plan & Prepare</h2><ul><li><a href="family-plan.html">Family plan</a></li><li><a href="bug-in-out.html">Bug in or out</a></li><li><a href="documents-finance.html">Documents & money</a></li><li><a href="offline-library.html">Offline library</a></li><li><a href="tools.html">Calculators</a></li><li><a href="dashboard.html">Your dashboard</a></li><li><a href="guides.html">All guides</a></li></ul></div><div><h2>Reference</h2><ul><li><a href="emergency-contacts.html">Emergency contacts</a></li><li><a href="communication.html">Radio & licensing</a></li><li><a href="antenna-plans.html">Antenna plans</a></li><li><a href="glossary.html">Glossary</a></li><li><a href="faq.html">FAQ</a></li><li><a href="sources.html">Sources</a></li></ul></div></div>
+    <div class="footer-bottom">
+      <span>BLACKOUT Apocalypse Survival Guide · Last reviewed 2026-10-19</span>
+      <span><a href="changelog.html">Changelog</a> · <a href="sources.html">Sources</a> · <a href="faq.html">FAQ</a> · <a href="index.html">Home</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

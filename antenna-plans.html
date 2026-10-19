@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Antenna Build Plans — BLACKOUT Apocalypse Survival Guide</title>
+<meta name="description" content="Printable plans for four practical antennas: half-wave dipole, quarter-wave ground plane, 2 m J-pole and a tape-measure Yagi.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="Antenna Build Plans — BLACKOUT Apocalypse Survival Guide">
+<meta property="og:description" content="Printable plans for four practical antennas: half-wave dipole, quarter-wave ground plane, 2 m J-pole and a tape-measure Yagi.">
+<meta property="og:type" content="website">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<link rel="preload" href="assets/fonts/CourierPrime-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/SpecialElite-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">BLK</span>
+      <span>BLACKOUT<small>Apocalypse Survival Guide</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul><li><a href="guides.html">Guides</a></li><li><a href="medical.html">Medical</a></li><li><a href="communication.html">Comms</a></li><li><a href="scenarios.html">Scenarios</a></li><li><a href="tools.html">Tools</a></li><li><a href="emergency-contacts.html">Contacts</a></li></ul>
+    </nav>
+  </div>
+</header>
+<div class="page-head"><div class="wrap"><nav aria-label="Breadcrumb"><ol class="breadcrumbs"><li><a href="index.html">Home</a></li><li><a href="guides.html?cat=comms">Communication</a></li><li aria-current="page">Antenna plans</li></ol></nav><h1>Antenna Build Plans</h1><p class="lede">Printable plans for four practical antennas: half-wave dipole, quarter-wave ground plane, 2 m J-pole and a tape-measure Yagi.</p>
+  <div class="page-meta">
+    <span><span class="dot" aria-hidden="true"></span>Communication</span>
+    <span>Last reviewed 2026-10-19</span>
+    <span>14 min read</span>
+    <button class="bookmark-btn no-print" type="button" data-bookmark="antenna-plans" aria-pressed="false">Save</button>
+    <button class="bookmark-btn no-print" type="button" data-print>Print</button>
+  </div></div></div>
+<div class="wrap layout"><article class="prose" id="main">
+<section id="overview"><p>These plans are for licensed amateur operators or receive-only use. Antennas are simple, cheap and effective — but they must be installed safely. <strong>Never install an antenna near power lines.</strong></p>
+<div class="callout callout--warning"><span class="callout-title">Before you build</span><p>You need a WPC amateur licence to transmit. Receive-only use of these antennas with a scanner or SDR is legal. All dimensions are starting points — trim and tune for lowest SWR with a meter.</p></div>
+<div class="tool no-print">
+  <h3>Antenna length calculator</h3>
+  <p class="text-muted" style="font-size:.85rem">Enter a frequency in MHz to get starting lengths. Results are approximate; real installations need tuning.</p>
+  <div class="field-row">
+    <div class="field"><label for="ant-freq">Frequency (MHz)</label><input id="ant-freq" type="number" min="1" max="6000" step="0.001" value="146" inputmode="decimal"></div>
+    <div class="field"><label for="ant-type">Antenna type</label>
+      <select id="ant-type">
+        <option value="dipole">Half-wave dipole (total)</option>
+        <option value="dipole-leg">Dipole leg (each side)</option>
+        <option value="quarter">Quarter-wave vertical</option>
+        <option value="jpole">J-pole radiator</option>
+        <option value="yagi">Yagi driven element</option>
+      </select>
+    </div>
+  </div>
+  <div class="tool-output" id="ant-out" aria-live="polite"></div>
+  <p class="text-muted" style="font-size:.8rem">Formulas: dipole total ≈ 143/f, quarter-wave ≈ 71.5/f, all in metres, f in MHz. Use the <a href="tools.html">tools page</a> for the full calculator.</p>
+</div></section>
+<h2 id="checklist">Priority checklist</h2><div class="checklist-progress" data-progress="antenna-plans"><span>0 / 6 done</span><span class="progress-track"><span class="progress-bar"></span></span></div>
+<ul class="checklist" data-checklist="antenna-plans"><li><label><input type="checkbox" data-check="antenna-plans-0"><span>Licence checked (transmit) or receive-only confirmed</span></label></li><li><label><input type="checkbox" data-check="antenna-plans-1"><span>Site clear of power lines</span></label></li><li><label><input type="checkbox" data-check="antenna-plans-2"><span>Tape measure, cutters, coax, connectors, soldering iron</span></label></li><li><label><input type="checkbox" data-check="antenna-plans-3"><span>SWR meter for tuning</span></label></li><li><label><input type="checkbox" data-check="antenna-plans-4"><span>Weatherproofing tape and sealant</span></label></li><li><label><input type="checkbox" data-check="antenna-plans-5"><span>Someone to help with installation</span></label></li></ul><p class="text-muted" style="font-size:.8rem">Progress is saved on this device only.</p>
+<section id="dipole"><h2>Half-wave dipole</h2><figure class="figure"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t d">
+<title id="t">Half-wave dipole antenna plan</title>
+<desc id="d">Diagram of a centre-fed half-wave dipole with total length L, two legs of L over 2, a balun, coax feed line and support ropes.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:3;fill:none}.ac{stroke:#ff6b00;stroke-width:3;fill:none}.dim{stroke:#a8a091;stroke-width:1.5;fill:none;stroke-dasharray:6 4}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:16px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:16px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:13px}.box{fill:#1a1a1a;stroke:#ff6b00;stroke-width:2}
+</style>
+<rect class="bg" width="800" height="420"/>
+<text class="ac2" x="30" y="36">HALF-WAVE DIPOLE · PLAN VIEW</text>
+<line class="ln" x1="170" y1="150" x2="390" y2="150"/>
+<line class="ln" x1="410" y1="150" x2="630" y2="150"/>
+<line class="ac" x1="390" y1="150" x2="410" y2="150"/>
+<rect class="box" x="380" y="138" width="40" height="24" rx="2"/>
+<text class="tx" x="388" y="155">1:1</text>
+<line class="ac" x1="400" y1="162" x2="400" y2="290"/>
+<path class="ac" d="M400 290 q30 30 0 60 q-30 30 0 50"/>
+<text class="ac2" x="418" y="330">COAX</text>
+<text class="mu" x="418" y="350">50 Ω to radio</text>
+<line class="dim" x1="170" y1="110" x2="630" y2="110"/>
+<line class="dim" x1="170" y1="100" x2="170" y2="120"/>
+<line class="dim" x1="630" y1="100" x2="630" y2="120"/>
+<text class="ac2" x="345" y="100">L = 143 ÷ f (MHz)</text>
+<line class="dim" x1="170" y1="180" x2="390" y2="180"/>
+<line class="dim" x1="410" y1="180" x2="630" y2="180"/>
+<text class="mu" x="215" y="202">L/2</text>
+<text class="mu" x="485" y="202">L/2</text>
+<line class="dim" x1="140" y1="130" x2="140" y2="170"/>
+<line class="dim" x1="140" y1="130" x2="160" y2="130"/>
+<line class="dim" x1="140" y1="170" x2="160" y2="170"/>
+<text class="mu" x="20" y="155">FEED POINT</text>
+<line class="mu" x1="110" y1="150" x2="150" y2="150"/>
+<circle class="ac" cx="630" cy="150" r="5"/>
+<circle class="ac" cx="170" cy="150" r="5"/>
+<text class="mu" x="600" y="135">INSULATOR</text>
+<path class="mu" d="M630 150 L680 90"/>
+<path class="mu" d="M170 150 L120 90"/>
+<text class="mu" x="680" y="80">SUPPORT</text>
+<text class="mu" x="90" y="80">SUPPORT</text>
+<text class="mu" x="30" y="395">Cut each leg slightly long, then trim for lowest SWR. Keep the wire clear of metal and power lines.</text>
+</svg>
+<figcaption><strong>Half-wave dipole.</strong> Total length L = 143 ÷ f (MHz), split into two equal legs. Feed the centre with coax through a 1:1 balun. Hang horizontally as high as practical.</figcaption></figure>
+<div class="table-scroll"><table><caption>Dipole cut list (starting lengths, trim for tuning).</caption><thead><tr><th scope="col">Band</th><th scope="col">Frequency</th><th scope="col">Total length</th><th scope="col">Each leg</th></tr></thead><tbody><tr><td>40 m</td><td>7.1 MHz</td><td>20.1 m</td><td>10.07 m</td></tr><tr><td>20 m</td><td>14.2 MHz</td><td>10.1 m</td><td>5.03 m</td></tr><tr><td>2 m</td><td>146 MHz</td><td>0.98 m</td><td>0.49 m</td></tr></tbody></table></div>
+<h3>Build steps</h3>
+<ol>
+<li>Cut two equal wires about 3% longer than the table.</li>
+<li>Attach insulators at the outer ends and a centre insulator/balun.</li>
+<li>Solder or clamp the coax centre conductor to one leg and the shield to the other.</li>
+<li>Support the ends with rope; keep the wire taut but not tight enough to snap.</li>
+<li>Measure SWR at low power and trim both legs equally in small steps.</li>
+</ol>
+<p><strong>Tuning:</strong> if the resonant frequency is too low, shorten the legs; too high, lengthen them. Aim for SWR below 1.5:1.</p></section>
+<section id="ground-plane"><h2>Quarter-wave ground plane</h2><figure class="figure"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t d">
+<title id="t">Quarter-wave ground plane antenna plan</title>
+<desc id="d">Vertical quarter-wave radiator with four sloping radials at about 45 degrees, fed with coax at the base.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:3;fill:none}.ac{stroke:#ff6b00;stroke-width:3;fill:none}.dim{stroke:#a8a091;stroke-width:1.5;fill:none;stroke-dasharray:6 4}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:16px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:16px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:13px}
+</style>
+<rect class="bg" width="800" height="420"/>
+<text class="ac2" x="30" y="36">QUARTER-WAVE GROUND PLANE · ELEVATION</text>
+<line class="ln" x1="400" y1="70" x2="400" y2="290"/>
+<circle class="ac" cx="400" cy="70" r="5"/>
+<rect class="ac" x="388" y="280" width="24" height="20" rx="2"/>
+<text class="ac2" x="420" y="296">SO-239</text>
+<line class="ac" x1="400" y1="300" x2="400" y2="380"/>
+<text class="mu" x="412" y="360">COAX</text>
+<line class="ln" x1="400" y1="290" x2="220" y2="170"/>
+<line class="ln" x1="400" y1="290" x2="580" y2="170"/>
+<line class="ln" x1="400" y1="290" x2="300" y2="330"/>
+<line class="ln" x1="400" y1="290" x2="500" y2="330"/>
+<circle class="ac" cx="220" cy="170" r="4"/>
+<circle class="ac" cx="580" cy="170" r="4"/>
+<circle class="ac" cx="300" cy="330" r="4"/>
+<circle class="ac" cx="500" cy="330" r="4"/>
+<line class="dim" x1="400" y1="70" x2="640" y2="70"/>
+<line class="dim" x1="400" y1="60" x2="400" y2="80"/>
+<line class="dim" x1="640" y1="60" x2="640" y2="80"/>
+<text class="ac2" x="440" y="60">RADIATOR = 71.5 ÷ f (MHz)</text>
+<line class="dim" x1="400" y1="290" x2="250" y2="190"/>
+<text class="mu" x="210" y="215">RADIAL ≈ RADIATOR × 1.05</text>
+<text class="mu" x="580" y="210">4 radials at ≈45°</text>
+<text class="mu" x="30" y="400">Mount the connector above ground, seal it, and slope radials down. Do not touch power lines.</text>
+</svg>
+<figcaption><strong>Quarter-wave ground plane.</strong> A vertical radiator of 71.5 ÷ f (MHz), with four radials about 5% longer, sloping down at roughly 45 degrees. Feed at the base through a SO-239 connector.</figcaption></figure>
+<div class="table-scroll"><table><caption>Ground plane dimensions.</caption><thead><tr><th scope="col">Band</th><th scope="col">Radiator</th><th scope="col">Radials (each)</th></tr></thead><tbody><tr><td>2 m (146 MHz)</td><td>0.49 m</td><td>0.51 m</td></tr><tr><td>70 cm (435 MHz)</td><td>0.16 m</td><td>0.17 m</td></tr></tbody></table></div>
+<h3>Build steps</h3>
+<ol>
+<li>Mount an SO-239 connector through a small metal plate or bracket.</li>
+<li>Solder the radiator to the centre pin; solder four radials to the shield/body.</li>
+<li>Bend radials down at about 45 degrees.</li>
+<li>Seal the connector with self-amalgamating tape.</li>
+<li>Mount on a mast clear of metal and wiring; check SWR and adjust radiator length.</li>
+</ol></section>
+<section id="jpole"><h2>Two-metre J-pole</h2><figure class="figure"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" role="img" aria-labelledby="t d">
+<title id="t">Two-metre J-pole antenna plan</title>
+<desc id="d">Dimensioned J-pole for 146 megahertz built from copper pipe or twin-lead, showing the short stub, long radiator, feed point and coax connection.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:6;fill:none;stroke-linecap:round}.ac{stroke:#ff6b00;stroke-width:3;fill:none}.dim{stroke:#a8a091;stroke-width:1.5;fill:none;stroke-dasharray:6 4}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:16px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:16px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:13px}
+</style>
+<rect class="bg" width="800" height="460"/>
+<text class="ac2" x="30" y="36">2 m J-POLE · 146 MHz</text>
+<line class="ln" x1="330" y1="80" x2="330" y2="380"/>
+<line class="ln" x1="400" y1="80" x2="400" y2="270"/>
+<path class="ln" d="M400 270 q35 55 0 110"/>
+<path class="ln" d="M330 380 q0 40 35 55 q35 15 35 -55"/>
+<line class="ac" x1="330" y1="300" x2="400" y2="300"/>
+<text class="ac2" x="345" y="292">FEED</text>
+<line class="ac" x1="365" y1="300" x2="365" y2="430"/>
+<text class="mu" x="375" y="420">COAX</text>
+<line class="dim" x1="300" y1="80" x2="300" y2="380"/>
+<line class="dim" x1="290" y1="80" x2="310" y2="80"/>
+<line class="dim" x1="290" y1="380" x2="310" y2="380"/>
+<text class="ac2" x="120" y="235">1480 mm</text>
+<line class="dim" x1="430" y1="80" x2="430" y2="270"/>
+<line class="dim" x1="420" y1="80" x2="440" y2="80"/>
+<line class="dim" x1="420" y1="270" x2="440" y2="270"/>
+<text class="ac2" x="445" y="185">495 mm</text>
+<line class="dim" x1="450" y1="270" x2="450" y2="380"/>
+<text class="mu" x="455" y="330">stub</text>
+<line class="dim" x1="330" y1="330" x2="400" y2="330"/>
+<text class="mu" x="350" y="352">50 mm gap</text>
+<text class="mu" x="30" y="445">Tune by sliding the feed point for lowest SWR; seal the coax joint. Mount clear of walls and wiring.</text>
+</svg>
+<figcaption><strong>2 m J-pole.</strong> Dimensions for 146 MHz from 300-ohm twin-lead or copper pipe. The feed point slides along the stub for tuning.</figcaption></figure>
+<div class="table-scroll"><table><caption>J-pole dimensions for 146 MHz (copper pipe version).</caption><thead><tr><th scope="col">Section</th><th scope="col">Length</th></tr></thead><tbody><tr><td>Long radiator</td><td>1480 mm</td></tr><tr><td>Short stub</td><td>495 mm</td></tr><tr><td>Gap at bottom</td><td>50 mm</td></tr><tr><td>Feed point (from bottom of stub)</td><td>≈ 60–90 mm, tune by sliding</td></tr></tbody></table></div>
+<h3>Build steps</h3>
+<ol>
+<li>Cut pipe or twin-lead to the dimensions; keep the two conductors parallel and spaced.</li>
+<li>Join the top of the stub to the radiator; leave the bottom gap open.</li>
+<li>Connect coax: centre to the radiator side, shield to the stub side, at the feed point.</li>
+<li>Seal the coax joint and mount the antenna vertically.</li>
+<li>Tune by moving the feed point for lowest SWR; mark the final position.</li>
+</ol>
+<p>J-poles are DC-grounded at the feed and work well without a balun, but they still need weatherproofing and safe mounting.</p></section>
+<section id="yagi"><h2>Three-element tape-measure Yagi</h2><figure class="figure"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t d">
+<title id="t">Three-element tape-measure Yagi plan</title>
+<desc id="d">Top view of a three-element Yagi with reflector, driven element and director mounted on a boom, with element lengths and spacing.</desc>
+<style>
+  .bg{fill:#0a0a0a}.el{stroke:#f2ead9;stroke-width:5;fill:none;stroke-linecap:round}.boom{stroke:#a8a091;stroke-width:6;fill:none}.ac{stroke:#ff6b00;stroke-width:3;fill:none}.dim{stroke:#a8a091;stroke-width:1.5;fill:none;stroke-dasharray:6 4}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:16px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:16px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:13px}
+</style>
+<rect class="bg" width="800" height="420"/>
+<text class="ac2" x="30" y="36">3-ELEMENT YAGI · 146 MHz</text>
+<line class="boom" x1="150" y1="230" x2="650" y2="230"/>
+<line class="el" x1="150" y1="130" x2="150" y2="330"/>
+<line class="el" x1="350" y1="140" x2="350" y2="320"/>
+<line class="el" x1="540" y1="155" x2="540" y2="305"/>
+<rect class="ac" x="338" y="220" width="24" height="20" rx="2"/>
+<text class="ac2" x="366" y="238">FEED</text>
+<text class="mu" x="118" y="360">REFLECTOR</text>
+<text class="mu" x="318" y="350">DRIVEN</text>
+<text class="mu" x="510" y="340">DIRECTOR</text>
+<line class="dim" x1="150" y1="380" x2="350" y2="380"/>
+<text class="mu" x="205" y="400">0.2 λ ≈ 410 mm</text>
+<line class="dim" x1="350" y1="380" x2="540" y2="380"/>
+<text class="mu" x="390" y="400">0.15 λ ≈ 308 mm</text>
+<path class="ac" d="M620 190 L700 190"/>
+<path class="ac" d="M690 180 L700 190 L690 200"/>
+<text class="ac2" x="650" y="175">DX</text>
+<text class="mu" x="30" y="36"> </text>
+<text class="mu" x="560" y="120">Elements: 1.0 / 0.95 / 0.9 × 1000 mm</text>
+<text class="mu" x="30" y="40" style="opacity:0">.</text>
+<text class="mu" x="30" y="60" style="opacity:0">.</text>
+</svg>
+<figcaption><strong>3-element Yagi.</strong> A directional antenna for foxhunting or reaching a distant repeater. Elements are made from steel tape measure, mounted through a timber or plastic boom.</figcaption></figure>
+<div class="table-scroll"><table><caption>Yagi dimensions for 146 MHz.</caption><thead><tr><th scope="col">Element</th><th scope="col">Length</th><th scope="col">Position on boom</th></tr></thead><tbody><tr><td>Reflector</td><td>1000 mm</td><td>0 mm (rear)</td></tr><tr><td>Driven</td><td>950 mm</td><td>410 mm</td></tr><tr><td>Director</td><td>900 mm</td><td>718 mm</td></tr></tbody></table></div>
+<h3>Build steps</h3>
+<ol>
+<li>Cut three elements from a steel tape measure; file the ends smooth.</li>
+<li>Mark the boom positions and drill clearance holes.</li>
+<li>Mount elements through insulating spacers so they do not short to the boom.</li>
+<li>Feed the driven element at its centre with coax; a simple gamma match or balun improves matching.</li>
+<li>Aim the director toward the target and tune SWR; keep the antenna away from metal and your body.</li>
+</ol>
+<div class="callout callout--note"><span class="callout-title">Directional tips</span>Yagis are directional: point the director (shortest element) toward the signal. Elevate slightly for distant repeaters. Handheld use detunes the antenna — mount it on a short mast or boom.</div></section>
+<section id="safety"><h2>Safety, grounding and weatherproofing</h2><figure class="figure"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-labelledby="t d">
+<title id="t">SWR meter and coax connection diagram</title>
+<desc id="d">Diagram showing radio, SWR meter, coax cable, antenna and grounding, with safe SWR thresholds.</desc>
+<style>
+  .bg{fill:#0a0a0a}.ln{stroke:#f2ead9;stroke-width:3;fill:none}.ac{stroke:#ff6b00;stroke-width:3;fill:none}
+  .tx{fill:#f2ead9;font-family:'Courier Prime',monospace;font-size:15px}.ac2{fill:#ff6b00;font-family:'Courier Prime',monospace;font-size:15px;font-weight:bold}
+  .mu{fill:#a8a091;font-family:'Courier Prime',monospace;font-size:12px}
+  .box{fill:#1a1a1a;stroke:#f2ead9;stroke-width:2}.boxac{fill:#1a1a1a;stroke:#ff6b00;stroke-width:2}
+</style>
+<rect class="bg" width="800" height="340"/>
+<text class="ac2" x="30" y="32">SWR TEST SETUP</text>
+<rect class="box" x="40" y="90" width="130" height="80" rx="3"/><text class="tx" x="70" y="138">RADIO</text>
+<rect class="boxac" x="240" y="90" width="150" height="80" rx="3"/><text class="tx" x="258" y="130">SWR METER</text><text class="mu" x="272" y="152">calibrate first</text>
+<rect class="box" x="460" y="90" width="150" height="80" rx="3"/><text class="tx" x="478" y="130">ANTENNA</text><text class="mu" x="478" y="152">+ balun</text>
+<path class="ln" d="M170 130 L240 130"/><path class="ln" d="M390 130 L460 130"/>
+<path class="ac" d="M535 170 L535 230 L620 230"/>
+<path class="ac" d="M620 230 L620 280"/>
+<path class="ac" d="M590 280 L650 280"/>
+<path class="ac" d="M600 292 L640 292"/>
+<text class="mu" x="650" y="245">EARTH ROD</text>
+<text class="mu" x="650" y="265">separate from mains</text>
+<text class="mu" x="40" y="240">SWR under 1.5:1 = good · 1.5–2.0:1 = usable · above 2.0:1 = stop and fix</text>
+<text class="mu" x="40" y="262">Transmit only into a matched antenna. Never key up with no antenna connected.</text>
+<text class="mu" x="40" y="300">Test at low power first. Keep the antenna away from people while transmitting.</text>
+<text class="mu" x="40" y="322">Do not test near power lines, in rain, or during lightning.</text>
+</svg>
+<figcaption><strong>SWR test setup.</strong> Radio → meter → antenna, with a separate earth. Test at low power and never transmit without an antenna connected.</figcaption></figure>
+<ul>
+<li><strong>Power lines:</strong> keep every part of the antenna and mast at least twice its height away from power lines. Assume lines are live.</li>
+<li><strong>Lightning:</strong> disconnect coax and ground the mast when storms are forecast. Do not rely on a surge protector alone.</li>
+<li><strong>Grounding:</strong> bond the mast and coax shield to a separate earth rod; do not use the mains earth as your RF earth.</li>
+<li><strong>Weatherproofing:</strong> wrap connectors with self-amalgamating tape, then electrical tape; seal coax entry points.</li>
+<li><strong>Mechanical:</strong> use guy ropes or a proper mast; wind loading on a wet antenna is significant.</li>
+<li><strong>RF exposure:</strong> do not transmit with people close to the antenna, especially at high power.</li>
+<li><strong>SWR:</strong> below 1.5:1 good, 1.5–2.0:1 usable, above 2.0:1 stop and fix.</li>
+</ul>
+<p>Related: <a href="communication.html">Communication & radio</a> · <a href="power.html">Power</a> · <a href="tools.html">Tools</a></p></section>
+<section id="notes" class="no-print"><h2>Your notes</h2><p class="text-muted" style="font-size:.85rem">Saved on this device only. Use the <a href="dashboard.html">dashboard</a> to export or back up your data.</p><div class="field"><label class="visually-hidden" for="page-notes">Notes for this guide</label><textarea id="page-notes" data-notes="antenna-plans" placeholder="Questions, local phone numbers, supplies to buy…"></textarea></div><p class="text-muted" id="notes-status" style="font-size:.75rem;min-height:1.2em"></p></section>
+<section id="related"><h2>Related guides</h2><ul class="tag-list"><li><a href="communication.html">Communication & radio</a></li><li><a href="power.html">Power</a></li><li><a href="tools.html">Tools</a></li></ul></section>
+<p class="text-muted" style="font-size:.8rem;margin-top:2.5rem">Last reviewed 2026-10-19. Corrections welcome — see <a href="sources.html">sources</a>.</p>
+</article><aside class="toc no-print" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol><li><a href="#dipole">Half-wave dipole</a></li><li><a href="#ground-plane">Quarter-wave ground plane</a></li><li><a href="#jpole">Two-metre J-pole</a></li><li><a href="#yagi">Three-element tape-measure Yagi</a></li><li><a href="#safety">Safety, grounding and weatherproofing</a></li></ol>
+  </aside></div><footer class="site-footer">
+  <div class="wrap">
+    <p class="disclaimer"><strong>Read this first:</strong> This guide is for education and preparedness. It does not replace professional training, medical care, or local emergency instructions. In a real emergency, follow official guidance and call the numbers on the <a href="emergency-contacts.html">contacts page</a>. Radio transmission requires a WPC licence in India; medical content is not a prescription.</p>
+    <div class="footer-grid"><div><h2>Survive</h2><ul><li><a href="water.html">Water</a></li><li><a href="food.html">Food</a></li><li><a href="shelter.html">Shelter</a></li><li><a href="fire.html">Fire</a></li><li><a href="power.html">Power</a></li><li><a href="sanitation.html">Sanitation</a></li></ul></div><div><h2>Health</h2><ul><li><a href="medical.html">Medical hub</a></li><li><a href="first-aid.html">First aid</a></li><li><a href="wound-care.html">Wound care</a></li><li><a href="medications.html">Medications</a></li><li><a href="mental-health.html">Mental health</a></li><li><a href="vulnerable-groups.html">Vulnerable groups</a></li></ul></div><div><h2>Plan & Prepare</h2><ul><li><a href="family-plan.html">Family plan</a></li><li><a href="bug-in-out.html">Bug in or out</a></li><li><a href="documents-finance.html">Documents & money</a></li><li><a href="offline-library.html">Offline library</a></li><li><a href="tools.html">Calculators</a></li><li><a href="dashboard.html">Your dashboard</a></li><li><a href="guides.html">All guides</a></li></ul></div><div><h2>Reference</h2><ul><li><a href="emergency-contacts.html">Emergency contacts</a></li><li><a href="communication.html">Radio & licensing</a></li><li><a href="antenna-plans.html">Antenna plans</a></li><li><a href="glossary.html">Glossary</a></li><li><a href="faq.html">FAQ</a></li><li><a href="sources.html">Sources</a></li></ul></div></div>
+    <div class="footer-bottom">
+      <span>BLACKOUT Apocalypse Survival Guide · Last reviewed 2026-10-19</span>
+      <span><a href="changelog.html">Changelog</a> · <a href="sources.html">Sources</a> · <a href="faq.html">FAQ</a> · <a href="index.html">Home</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
