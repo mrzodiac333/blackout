@@ -1,4 +1,5 @@
 const { callout, table } = require("../render");
+const { SOURCES } = require("../data/india-hazards");
 
 module.exports = [
   {
@@ -11,6 +12,7 @@ module.exports = [
       "India emergency numbers, disaster helplines, radio and alert sources, and a printable family contact card.",
     readTime: "4 min read",
     intro: `<p>Save these numbers in every phone and write them on paper. In a wide-area outage, mobile data may fail before voice calls do — and both may fail before FM radio does. Program the numbers now, while you have connectivity.</p>
+<p>For the first actions in an emergency, use <a href="act-now.html">Act now</a>. For local hazard priorities, open <a href="hazards.html">Hazards where you live</a>.</p>
 ${callout(
   "danger",
   "Life-threatening emergency",
@@ -250,6 +252,20 @@ ${callout(
 </ul>`,
       },
       {
+        id: "hazard-maps",
+        title: "Hazard maps and official risk data",
+        html: `<p>These are the official maps and datasets behind the <a href="hazards.html">state and UT hazard toolkit</a>. They are general references; district and local conditions can differ.</p>
+<ul>
+${Object.values(SOURCES)
+  .map(
+    (source) =>
+      `<li><strong>${source.label}</strong> - ${source.note} <a href="${source.url}" rel="noopener">Official source</a></li>`
+  )
+  .join("\n")}
+</ul>
+<p>In an emergency, follow IMD, NDMA, SDMA, DDMA and local officials over this site. For immediate actions, open <a href="act-now.html">Act now</a>.</p>`,
+      },
+      {
         id: "training",
         title: "Training worth taking",
         html: `<ul>
@@ -286,6 +302,18 @@ ${callout(
     readTime: "2 min read",
     intro: `<p>All content reviewed against current guidance where noted. Dates are review dates, not publication dates.</p>`,
     sections: [
+      {
+        id: "v1-1",
+        title: "v1.1 - readiness console and hazard atlas",
+        html: `<p><strong>2026-10-19</strong></p>
+<ul>
+<li>Added the eight-question readiness check with local-only score storage and a dashboard card.</li>
+<li>Added <a href="hazards.html">Hazards where you live</a>, a state and UT preparedness map covering eight hazards with official source links.</li>
+<li>Added <a href="act-now.html">Act now</a> immediate-action cards for medical, natural hazard, utility and security emergencies.</li>
+<li>Added homepage quick search, personal kit summary, install/offline status and manifest shortcuts.</li>
+<li>Bumped the offline cache and added the new pages to the sitemap and service worker.</li>
+</ul>`,
+      },
       {
         id: "v1",
         title: "v1.0 — initial release",

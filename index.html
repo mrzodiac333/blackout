@@ -16,9 +16,11 @@
 <link rel="preload" href="assets/fonts/SpecialElite-Regular.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="css/styles.css">
 <script src="js/main.js" defer></script>
-
+<script src="js/guide-data.js" defer></script>
+<script src="js/hazard-data.js" defer></script>
+<script src="js/home.js" defer></script>
 </head>
-<body>
+<body data-page="index" data-kind="page">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap header-inner">
@@ -33,14 +35,39 @@
   </div>
 </header>
 
+
+<div class="emergency-bar">
+  <div class="wrap emergency-bar-inner">
+    <span class="emergency-bar-label">Emergency?</span>
+    <a class="emergency-bar-call" href="tel:112">Call 112</a>
+    <span class="emergency-bar-links">
+      <a href="act-now.html">Act now</a>
+      <a href="first-aid.html#bleeding">Bleeding</a>
+      <a href="flood.html#during">Flood</a>
+      <a href="climate.html#heat">Heat</a>
+      <a href="earthquake.html#during">Earthquake</a>
+    </span>
+  </div>
+</div>
+
 <div class="hero">
   <div class="wrap hero-inner">
     <div>
-      <span class="eyebrow">Field manual · India edition</span>
+      <span class="eyebrow">Field manual A� India edition</span>
       <h1>The grid can fail.<br><span class="glow">You don't have to.</span></h1>
-      <p class="lede">A practical, offline-ready survival guide for water, food, shelter, medicine, radio and disaster response. No fantasy gear lists — just skills, plans and checklists that work when the systems you rely on stop.</p>
+      <p class="lede">A practical, offline-ready survival guide for water, food, shelter, medicine, radio and disaster response. No fantasy gear lists �?" just skills, plans and checklists that work when the systems you rely on stop.</p>
+      <form class="hero-search" id="home-search" action="guides.html" method="get" role="search">
+        <label class="visually-hidden" for="home-search-input">Search all guides</label>
+        <div class="hero-search-field">
+          <input id="home-search-input" name="q" type="search" placeholder="Search guides: water, bleeding, cyclone, radio..." autocomplete="off" role="combobox" aria-expanded="false" aria-controls="home-search-results" aria-autocomplete="list">
+          <button class="btn btn--small" type="submit">Search</button>
+        </div>
+        <div class="hero-search-results" id="home-search-results" role="listbox" hidden></div>
+      </form>
+      <p class="hero-search-hint">52 guides, 8 hazard maps and the emergency toolkit. Works offline.</p>
       <div class="hero-actions">
         <a class="btn" href="guides.html">Browse the guides</a>
+        <a class="btn btn--ghost" href="act-now.html">Act now</a>
         <a class="btn btn--ghost" href="family-plan.html">Start a family plan</a>
       </div>
     </div>
@@ -48,11 +75,136 @@
       <strong>72 HOURS</strong>
       <span>minimum self-sufficiency</span><br>
       <span>14 days recommended</span><br>
-      <span>52 guides · 4 antenna plans</span><br>
+      <span>52 guides + hazard atlas</span><br>
       <span>Works offline</span>
     </div>
   </div>
 </div>
+
+<section class="section readiness-section" id="readiness">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Readiness check</span>
+      <h2>How ready are you, really?</h2>
+      <p>Eight checks. No account. Your answers stay in this browser and can be cleared at any time.</p>
+    </div>
+    <div class="home-readiness-grid">
+      <div class="readiness-card">
+        <div class="readiness-top">
+          <div class="readiness-ring" id="readiness-ring" style="--score:0">
+            <span><strong id="readiness-score">0</strong><small>/100</small></span>
+          </div>
+          <div class="readiness-copy" aria-live="polite">
+            <p class="eyebrow">Current score</p>
+            <h3 id="readiness-tier">Not ready yet</h3>
+            <p id="readiness-summary">Tick what you already have. The score is a planning aid, not a guarantee.</p>
+          </div>
+        </div>
+        <div class="readiness-meter" aria-hidden="true"><span id="readiness-bar"></span></div>
+        <form id="readiness-form">
+          <fieldset>
+            <legend class="visually-hidden">Readiness checks</legend>
+            <label class="readiness-item">
+              <input type="checkbox" name="readiness" value="water" data-points="20">
+              <span class="readiness-box" aria-hidden="true"></span>
+              <span class="readiness-text"><strong>At least 14 days of drinking water</strong><small>Four people need roughly 560 litres for 14 days at 10 litres per person per day.</small></span>
+              <span class="readiness-points">20</span>
+            </label><label class="readiness-item">
+              <input type="checkbox" name="readiness" value="food" data-points="15">
+              <span class="readiness-box" aria-hidden="true"></span>
+              <span class="readiness-text"><strong>At least 14 days of food you actually eat</strong><small>Include foods that need little or no cooking and water.</small></span>
+              <span class="readiness-points">15</span>
+            </label><label class="readiness-item">
+              <input type="checkbox" name="readiness" value="firstaid" data-points="15">
+              <span class="readiness-box" aria-hidden="true"></span>
+              <span class="readiness-text"><strong>First-aid kit and a month of essential medicines</strong><small>Include prescriptions, a thermometer and a first-aid manual.</small></span>
+              <span class="readiness-points">15</span>
+            </label><label class="readiness-item">
+              <input type="checkbox" name="readiness" value="plan" data-points="15">
+              <span class="readiness-box" aria-hidden="true"></span>
+              <span class="readiness-text"><strong>A written family plan with meeting points</strong><small>Include routes, roles, an out-of-area contact and school pickups.</small></span>
+              <span class="readiness-points">15</span>
+            </label><label class="readiness-item">
+              <input type="checkbox" name="readiness" value="bag" data-points="10">
+              <span class="readiness-box" aria-hidden="true"></span>
+              <span class="readiness-text"><strong>A go-bag for each person</strong><small>Documents, water, torch, radio, charger, medicines and cash.</small></span>
+              <span class="readiness-points">10</span>
+            </label><label class="readiness-item">
+              <input type="checkbox" name="readiness" value="power" data-points="10">
+              <span class="readiness-box" aria-hidden="true"></span>
+              <span class="readiness-text"><strong>Power, light and a radio that work without mains</strong><small>Torch, batteries, power bank, solar or a safely used generator.</small></span>
+              <span class="readiness-points">10</span>
+            </label><label class="readiness-item">
+              <input type="checkbox" name="readiness" value="docs" data-points="10">
+              <span class="readiness-box" aria-hidden="true"></span>
+              <span class="readiness-text"><strong>Copies of documents and some cash</strong><small>ID, insurance, prescriptions and emergency contacts, stored offline.</small></span>
+              <span class="readiness-points">10</span>
+            </label><label class="readiness-item">
+              <input type="checkbox" name="readiness" value="local" data-points="5">
+              <span class="readiness-box" aria-hidden="true"></span>
+              <span class="readiness-text"><strong>I know my local hazards and evacuation route</strong><small>Check your district plan, nearest shelter and safe route.</small></span>
+              <span class="readiness-points">5</span>
+            </label>
+          </fieldset>
+        </form>
+        <div class="readiness-actions">
+          <button class="btn btn--ghost btn--small" type="button" id="readiness-reset">Reset</button>
+          <a class="btn btn--small" href="family-plan.html">Build a family plan</a>
+        </div>
+      </div>
+      <div class="home-side">
+        <div class="kit-card">
+          <span class="eyebrow">Personal kit</span>
+          <h3>Your saved field kit</h3>
+          <div class="kit-stats">
+            <a href="#readiness"><strong id="kit-readiness">0%</strong><span>Readiness</span></a>
+            <a href="dashboard.html"><strong id="kit-bookmarks">0</strong><span>Bookmarks</span></a>
+            <a href="dashboard.html"><strong id="kit-checks">0%</strong><span>Checklists</span></a>
+            <a href="dashboard.html"><strong id="kit-notes">0</strong><span>Notes</span></a>
+          </div>
+          <div class="kit-recent">
+            <h4>Recently viewed</h4>
+            <div id="kit-recent-list"><p class="text-muted">Open a guide and it will appear here.</p></div>
+          </div>
+          <a class="card-meta" href="dashboard.html">Open dashboard →</a>
+        </div>
+        <div class="install-card" id="install-card">
+          <span class="eyebrow">Offline</span>
+          <h3>Install the field manual</h3>
+          <p class="text-muted" id="install-status" aria-live="polite">Install the site for offline access.</p>
+          <button class="btn btn--small" id="install-btn" type="button" hidden>Install app</button>
+          <p class="install-cache" id="cache-status">Checking offline cache...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight home-hazards" id="hazards">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Local risk</span>
+      <h2>Hazards where you live</h2>
+      <p>Select a state or union territory. You will get the priority hazards, first actions and the full guide for each.</p>
+    </div>
+    <div class="hazard-preview">
+      <div class="hazard-preview-pick">
+        <div class="field">
+          <label for="home-state">State or union territory</label>
+          <select id="home-state">
+            <option value="">Select a state or UT</option>
+            <optgroup label="States"><option value="AP">Andhra Pradesh</option><option value="AR">Arunachal Pradesh</option><option value="AS">Assam</option><option value="BR">Bihar</option><option value="CT">Chhattisgarh</option><option value="GA">Goa</option><option value="GJ">Gujarat</option><option value="HR">Haryana</option><option value="HP">Himachal Pradesh</option><option value="JH">Jharkhand</option><option value="KA">Karnataka</option><option value="KL">Kerala</option><option value="MP">Madhya Pradesh</option><option value="MH">Maharashtra</option><option value="MN">Manipur</option><option value="ML">Meghalaya</option><option value="MZ">Mizoram</option><option value="NL">Nagaland</option><option value="OD">Odisha</option><option value="PB">Punjab</option><option value="RJ">Rajasthan</option><option value="SK">Sikkim</option><option value="TN">Tamil Nadu</option><option value="TG">Telangana</option><option value="TR">Tripura</option><option value="UP">Uttar Pradesh</option><option value="UK">Uttarakhand</option><option value="WB">West Bengal</option></optgroup>
+            <optgroup label="Union territories"><option value="AN">Andaman and Nicobar Islands</option><option value="CH">Chandigarh</option><option value="DH">Dadra and Nagar Haveli and Daman and Diu</option><option value="DL">Delhi</option><option value="JK">Jammu and Kashmir</option><option value="LA">Ladakh</option><option value="LD">Lakshadweep</option><option value="PY">Puducherry</option></optgroup>
+          </select>
+        </div>
+        <p class="text-muted">Saved on this device. <a href="hazards.html">Open the full map and table</a>.</p>
+      </div>
+      <div class="hazard-preview-panel" id="home-state-preview" aria-live="polite">
+        <p class="text-muted">Choose a state or union territory to see its priority hazards.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section">
   <div class="wrap">
@@ -132,14 +284,12 @@
 <footer class="site-footer">
   <div class="wrap">
     <p class="disclaimer"><strong>Read this first:</strong> This guide is for education and preparedness. It does not replace professional training, medical care, or local emergency instructions. In a real emergency, follow official guidance and call the numbers on the <a href="emergency-contacts.html">contacts page</a>. Radio transmission requires a WPC licence in India; medical content is not a prescription.</p>
-    <div class="footer-grid"><div><h2>Survive</h2><ul><li><a href="water.html">Water</a></li><li><a href="food.html">Food</a></li><li><a href="shelter.html">Shelter</a></li><li><a href="fire.html">Fire</a></li><li><a href="power.html">Power</a></li><li><a href="sanitation.html">Sanitation</a></li></ul></div><div><h2>Health</h2><ul><li><a href="medical.html">Medical hub</a></li><li><a href="first-aid.html">First aid</a></li><li><a href="wound-care.html">Wound care</a></li><li><a href="medications.html">Medications</a></li><li><a href="mental-health.html">Mental health</a></li><li><a href="vulnerable-groups.html">Vulnerable groups</a></li></ul></div><div><h2>Plan & Prepare</h2><ul><li><a href="family-plan.html">Family plan</a></li><li><a href="bug-in-out.html">Bug in or out</a></li><li><a href="documents-finance.html">Documents & money</a></li><li><a href="offline-library.html">Offline library</a></li><li><a href="tools.html">Calculators</a></li><li><a href="dashboard.html">Your dashboard</a></li><li><a href="guides.html">All guides</a></li></ul></div><div><h2>Reference</h2><ul><li><a href="emergency-contacts.html">Emergency contacts</a></li><li><a href="communication.html">Radio & licensing</a></li><li><a href="antenna-plans.html">Antenna plans</a></li><li><a href="glossary.html">Glossary</a></li><li><a href="faq.html">FAQ</a></li><li><a href="sources.html">Sources</a></li></ul></div></div>
+    <div class="footer-grid"><div><h2>Survive</h2><ul><li><a href="water.html">Water</a></li><li><a href="food.html">Food</a></li><li><a href="shelter.html">Shelter</a></li><li><a href="fire.html">Fire</a></li><li><a href="power.html">Power</a></li><li><a href="sanitation.html">Sanitation</a></li></ul></div><div><h2>Health</h2><ul><li><a href="medical.html">Medical hub</a></li><li><a href="first-aid.html">First aid</a></li><li><a href="wound-care.html">Wound care</a></li><li><a href="medications.html">Medications</a></li><li><a href="mental-health.html">Mental health</a></li><li><a href="vulnerable-groups.html">Vulnerable groups</a></li></ul></div><div><h2>Plan & Prepare</h2><ul><li><a href="family-plan.html">Family plan</a></li><li><a href="bug-in-out.html">Bug in or out</a></li><li><a href="documents-finance.html">Documents & money</a></li><li><a href="offline-library.html">Offline library</a></li><li><a href="tools.html">Calculators</a></li><li><a href="dashboard.html">Your dashboard</a></li><li><a href="guides.html">All guides</a></li></ul></div><div><h2>Reference</h2><ul><li><a href="emergency-contacts.html">Emergency contacts</a></li><li><a href="act-now.html">Act now</a></li><li><a href="hazards.html">Hazards where you live</a></li><li><a href="communication.html">Radio & licensing</a></li><li><a href="antenna-plans.html">Antenna plans</a></li><li><a href="glossary.html">Glossary</a></li><li><a href="faq.html">FAQ</a></li><li><a href="sources.html">Sources</a></li></ul></div></div>
     <div class="footer-bottom">
       <span>BLACKOUT Apocalypse Survival Guide · Last reviewed 2026-10-19</span>
       <span><a href="changelog.html">Changelog</a> · <a href="sources.html">Sources</a> · <a href="faq.html">FAQ</a> · <a href="index.html">Home</a></span>
     </div>
   </div>
 </footer>
-</body>
-</html>
 </body>
 </html>

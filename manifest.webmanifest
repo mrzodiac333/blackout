@@ -16,8 +16,8 @@
   ],
   "shortcuts": [
     { "name": "Emergency contacts", "url": "emergency-contacts.html" },
+    { "name": "Act now", "url": "act-now.html" },
     { "name": "First aid", "url": "first-aid.html" },
-    { "name": "Water", "url": "water.html" },
-    { "name": "All guides", "url": "guides.html" }
+    { "name": "Hazards where you live", "url": "hazards.html" }
   ]
 }

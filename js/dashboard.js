@@ -33,6 +33,26 @@
   }
 
   function render() {
+    var readiness = read("readiness", null);
+    if ($("dash-readiness")) {
+      if (readiness && typeof readiness.score === "number") {
+        $("dash-readiness").innerHTML =
+          '<p style="font-size:2.2rem;line-height:1;margin:0 0 .3rem"><strong>' +
+          readiness.score +
+          '</strong><span class="text-muted" style="font-size:1rem">/100</span></p>' +
+          '<p style="margin:0 0 .5rem">' +
+          esc(readiness.tier || "Readiness checked") +
+          "</p>" +
+          '<p class="text-muted" style="font-size:.78rem;margin:0 0 .5rem">Checked ' +
+          when(readiness.date) +
+          "</p>" +
+          '<a href="index.html#readiness">Update readiness →</a>';
+      } else {
+        $("dash-readiness").innerHTML =
+          '<p class="text-muted">No readiness check yet. <a href="index.html#readiness">Take the check</a>.</p>';
+      }
+    }
+
     var bookmarks = read("bookmarks", {});
     var bm = Object.keys(bookmarks)
       .map(function (slug) {

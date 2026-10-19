@@ -1,4 +1,21 @@
 const { callout, table, esc } = require("../render");
+const { STATES } = require("../data/india-hazards");
+
+const readinessQuestions = [
+  { key: "water", points: 20, label: "At least 14 days of drinking water", hint: "Four people need roughly 560 litres for 14 days at 10 litres per person per day." },
+  { key: "food", points: 15, label: "At least 14 days of food you actually eat", hint: "Include foods that need little or no cooking and water." },
+  { key: "firstaid", points: 15, label: "First-aid kit and a month of essential medicines", hint: "Include prescriptions, a thermometer and a first-aid manual." },
+  { key: "plan", points: 15, label: "A written family plan with meeting points", hint: "Include routes, roles, an out-of-area contact and school pickups." },
+  { key: "bag", points: 10, label: "A go-bag for each person", hint: "Documents, water, torch, radio, charger, medicines and cash." },
+  { key: "power", points: 10, label: "Power, light and a radio that work without mains", hint: "Torch, batteries, power bank, solar or a safely used generator." },
+  { key: "docs", points: 10, label: "Copies of documents and some cash", hint: "ID, insurance, prescriptions and emergency contacts, stored offline." },
+  { key: "local", points: 5, label: "I know my local hazards and evacuation route", hint: "Check your district plan, nearest shelter and safe route." },
+];
+
+const stateOptions = (type) =>
+  STATES.filter((state) => state.type === type)
+    .map((state) => `<option value="${state.code}">${esc(state.name)}</option>`)
+    .join("");
 
 const featured = [
   ["water", "Water", "Find it, treat it, store enough for two weeks."],
@@ -14,14 +31,38 @@ const index = {
   title: "",
   summary: "",
   html: `
+<div class="emergency-bar">
+  <div class="wrap emergency-bar-inner">
+    <span class="emergency-bar-label">Emergency?</span>
+    <a class="emergency-bar-call" href="tel:112">Call 112</a>
+    <span class="emergency-bar-links">
+      <a href="act-now.html">Act now</a>
+      <a href="first-aid.html#bleeding">Bleeding</a>
+      <a href="flood.html#during">Flood</a>
+      <a href="climate.html#heat">Heat</a>
+      <a href="earthquake.html#during">Earthquake</a>
+    </span>
+  </div>
+</div>
+
 <div class="hero">
   <div class="wrap hero-inner">
     <div>
-      <span class="eyebrow">Field manual · India edition</span>
+      <span class="eyebrow">Field manual A� India edition</span>
       <h1>The grid can fail.<br><span class="glow">You don't have to.</span></h1>
-      <p class="lede">A practical, offline-ready survival guide for water, food, shelter, medicine, radio and disaster response. No fantasy gear lists — just skills, plans and checklists that work when the systems you rely on stop.</p>
+      <p class="lede">A practical, offline-ready survival guide for water, food, shelter, medicine, radio and disaster response. No fantasy gear lists �?" just skills, plans and checklists that work when the systems you rely on stop.</p>
+      <form class="hero-search" id="home-search" action="guides.html" method="get" role="search">
+        <label class="visually-hidden" for="home-search-input">Search all guides</label>
+        <div class="hero-search-field">
+          <input id="home-search-input" name="q" type="search" placeholder="Search guides: water, bleeding, cyclone, radio..." autocomplete="off" role="combobox" aria-expanded="false" aria-controls="home-search-results" aria-autocomplete="list">
+          <button class="btn btn--small" type="submit">Search</button>
+        </div>
+        <div class="hero-search-results" id="home-search-results" role="listbox" hidden></div>
+      </form>
+      <p class="hero-search-hint">52 guides, 8 hazard maps and the emergency toolkit. Works offline.</p>
       <div class="hero-actions">
         <a class="btn" href="guides.html">Browse the guides</a>
+        <a class="btn btn--ghost" href="act-now.html">Act now</a>
         <a class="btn btn--ghost" href="family-plan.html">Start a family plan</a>
       </div>
     </div>
@@ -29,11 +70,105 @@ const index = {
       <strong>72 HOURS</strong>
       <span>minimum self-sufficiency</span><br>
       <span>14 days recommended</span><br>
-      <span>52 guides · 4 antenna plans</span><br>
+      <span>52 guides + hazard atlas</span><br>
       <span>Works offline</span>
     </div>
   </div>
 </div>
+
+<section class="section readiness-section" id="readiness">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Readiness check</span>
+      <h2>How ready are you, really?</h2>
+      <p>Eight checks. No account. Your answers stay in this browser and can be cleared at any time.</p>
+    </div>
+    <div class="home-readiness-grid">
+      <div class="readiness-card">
+        <div class="readiness-top">
+          <div class="readiness-ring" id="readiness-ring" style="--score:0">
+            <span><strong id="readiness-score">0</strong><small>/100</small></span>
+          </div>
+          <div class="readiness-copy" aria-live="polite">
+            <p class="eyebrow">Current score</p>
+            <h3 id="readiness-tier">Not ready yet</h3>
+            <p id="readiness-summary">Tick what you already have. The score is a planning aid, not a guarantee.</p>
+          </div>
+        </div>
+        <div class="readiness-meter" aria-hidden="true"><span id="readiness-bar"></span></div>
+        <form id="readiness-form">
+          <fieldset>
+            <legend class="visually-hidden">Readiness checks</legend>
+            ${readinessQuestions
+              .map(
+                (question) => `<label class="readiness-item">
+              <input type="checkbox" name="readiness" value="${question.key}" data-points="${question.points}">
+              <span class="readiness-box" aria-hidden="true"></span>
+              <span class="readiness-text"><strong>${question.label}</strong><small>${question.hint}</small></span>
+              <span class="readiness-points">${question.points}</span>
+            </label>`
+              )
+              .join("")}
+          </fieldset>
+        </form>
+        <div class="readiness-actions">
+          <button class="btn btn--ghost btn--small" type="button" id="readiness-reset">Reset</button>
+          <a class="btn btn--small" href="family-plan.html">Build a family plan</a>
+        </div>
+      </div>
+      <div class="home-side">
+        <div class="kit-card">
+          <span class="eyebrow">Personal kit</span>
+          <h3>Your saved field kit</h3>
+          <div class="kit-stats">
+            <a href="#readiness"><strong id="kit-readiness">0%</strong><span>Readiness</span></a>
+            <a href="dashboard.html"><strong id="kit-bookmarks">0</strong><span>Bookmarks</span></a>
+            <a href="dashboard.html"><strong id="kit-checks">0%</strong><span>Checklists</span></a>
+            <a href="dashboard.html"><strong id="kit-notes">0</strong><span>Notes</span></a>
+          </div>
+          <div class="kit-recent">
+            <h4>Recently viewed</h4>
+            <div id="kit-recent-list"><p class="text-muted">Open a guide and it will appear here.</p></div>
+          </div>
+          <a class="card-meta" href="dashboard.html">Open dashboard →</a>
+        </div>
+        <div class="install-card" id="install-card">
+          <span class="eyebrow">Offline</span>
+          <h3>Install the field manual</h3>
+          <p class="text-muted" id="install-status" aria-live="polite">Install the site for offline access.</p>
+          <button class="btn btn--small" id="install-btn" type="button" hidden>Install app</button>
+          <p class="install-cache" id="cache-status">Checking offline cache...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight home-hazards" id="hazards">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Local risk</span>
+      <h2>Hazards where you live</h2>
+      <p>Select a state or union territory. You will get the priority hazards, first actions and the full guide for each.</p>
+    </div>
+    <div class="hazard-preview">
+      <div class="hazard-preview-pick">
+        <div class="field">
+          <label for="home-state">State or union territory</label>
+          <select id="home-state">
+            <option value="">Select a state or UT</option>
+            <optgroup label="States">${stateOptions("state")}</optgroup>
+            <optgroup label="Union territories">${stateOptions("ut")}</optgroup>
+          </select>
+        </div>
+        <p class="text-muted">Saved on this device. <a href="hazards.html">Open the full map and table</a>.</p>
+      </div>
+      <div class="hazard-preview-panel" id="home-state-preview" aria-live="polite">
+        <p class="text-muted">Choose a state or union territory to see its priority hazards.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section">
   <div class="wrap">
@@ -103,6 +238,8 @@ const scenariosHub = {
   html: `<div class="page-head"><div class="wrap"><nav aria-label="Breadcrumb"><ol class="breadcrumbs"><li><a href="index.html">Home</a></li><li aria-current="page">Scenarios</li></ol></nav>
   <h1>Scenarios & Hazards</h1><p class="lede">When the emergency has a name, you need a specific plan. Each playbook gives the first 72 hours, the main risks, and what to do after.</p></div></div>
   <div class="wrap" style="padding-bottom:4rem" id="main">
+    <div class="callout callout--note" style="margin-top:0"><span class="callout-title">Start with where you live</span><p>Use the <a href="hazards.html">state and UT hazard map</a> to see which risks deserve priority in your area. For the first minutes of an emergency, open <a href="act-now.html">Act now</a>.</p></div>
+    <div class="hero-actions" style="margin:1rem 0 2rem"><a class="btn btn--small" href="hazards.html">Open the hazard map</a><a class="btn btn--ghost btn--small" href="act-now.html">Immediate actions</a></div>
     <div class="section-head"><h2>Worst-case scenarios</h2><p>Low probability, high consequence. Preparation overlaps heavily with everyday resilience.</p></div>
     <div class="grid grid--3">
       <a class="card" href="grid-collapse.html"><span class="card-tag">Infrastructure</span><h3>Grid collapse</h3><p>A long power outage takes out water, fuel and telecoms within hours.</p><span class="card-meta">Open →</span></a>
@@ -336,6 +473,7 @@ const dashboard = {
   <h1>Your Dashboard</h1><p class="lede">Everything here is stored in this browser only. Export a backup before clearing your browser data or changing devices.</p></div></div>
   <div class="wrap" style="padding-bottom:4rem" id="main">
     <div class="grid grid--2">
+      <section class="tool"><h2 style="font-family:var(--font-body);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)">Readiness</h2><div id="dash-readiness" class="text-muted">No readiness check yet. <a href="index.html#readiness">Take the check</a>.</div></section>
       <section class="tool"><h2 style="font-family:var(--font-body);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)">Saved guides</h2><div id="dash-bookmarks" class="text-muted">No bookmarks yet.</div></section>
       <section class="tool"><h2 style="font-family:var(--font-body);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)">Checklist progress</h2><div id="dash-checks" class="text-muted">No checklist progress yet.</div></section>
     </div>

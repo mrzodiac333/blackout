@@ -1,4 +1,4 @@
-const CACHE = "blackout-v5";
+const CACHE = "blackout-v6";
 const ASSETS = [
   "index.html",
   "guides.html",
@@ -7,6 +7,8 @@ const ASSETS = [
   "404.html",
   "offline.html",
   "scenarios.html",
+  "hazards.html",
+  "act-now.html",
   "emergency-contacts.html",
   "glossary.html",
   "faq.html",
@@ -65,6 +67,9 @@ const ASSETS = [
   "js/tools.js",
   "js/dashboard.js",
   "js/guide-data.js",
+  "js/home.js",
+  "js/hazards.js",
+  "js/hazard-data.js",
   "manifest.webmanifest",
   "assets/icons/icon.svg",
   "assets/icons/icon-192.png",
@@ -111,18 +116,25 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((cached) => {
       if (cached) return cached;
-      return fetch(event.request)
-        .then((response) => {
-          if (response && response.status === 200) {
-            const copy = response.clone();
-            caches.open(CACHE).then((cache) => cache.put(event.request, copy));
-          }
-          return response;
-        })
-        .catch(() => {
-          if (event.request.mode === "navigate") return caches.match("offline.html");
-          return new Response("", { status: 503, statusText: "Offline" });
-        });
+      const cleanUrl = new URL(event.request.url);
+      cleanUrl.search = "";
+      cleanUrl.hash = "";
+      const clean = cleanUrl.href === event.request.url ? null : caches.match(cleanUrl.href);
+      return Promise.resolve(clean).then((cleanCached) => {
+        if (cleanCached) return cleanCached;
+        return fetch(event.request)
+          .then((response) => {
+            if (response && response.status === 200) {
+              const copy = response.clone();
+              caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+            }
+            return response;
+          })
+          .catch(() => {
+            if (event.request.mode === "navigate") return caches.match("offline.html");
+            return new Response("", { status: 503, statusText: "Offline" });
+          });
+      });
     })
   );
 });

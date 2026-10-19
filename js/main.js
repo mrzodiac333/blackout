@@ -25,6 +25,41 @@
     return Array.prototype.slice.call((root || document).querySelectorAll(sel));
   }
 
+  /* ---------- Install prompt ---------- */
+  var deferredInstallPrompt = null;
+  window.BLACKOUT_INSTALL = {
+    get: function () {
+      return deferredInstallPrompt;
+    },
+    clear: function () {
+      deferredInstallPrompt = null;
+    },
+  };
+  window.addEventListener("beforeinstallprompt", function (event) {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+    window.dispatchEvent(new Event("blackout:installready"));
+  });
+  window.addEventListener("appinstalled", function () {
+    deferredInstallPrompt = null;
+    window.dispatchEvent(new Event("blackout:installed"));
+  });
+
+  /* ---------- Recently viewed guides ---------- */
+  var pageKind = document.body.getAttribute("data-kind");
+  var pageSlug = document.body.getAttribute("data-page");
+  if (pageKind === "guide" && pageSlug) {
+    var recent = read("recent", []);
+    if (!Array.isArray(recent)) recent = [];
+    var heading = $(".page-head h1") || $("h1");
+    var pageTitle = heading ? heading.textContent.trim() : document.title.replace(/ .*$/, "");
+    recent = recent.filter(function (item) {
+      return item && item.slug !== pageSlug;
+    });
+    recent.unshift({ slug: pageSlug, title: pageTitle, at: Date.now() });
+    write("recent", recent.slice(0, 6));
+  }
+
   /* ---------- Mobile nav ---------- */
   var toggle = $(".nav-toggle");
   var nav = $("#site-nav");
@@ -115,6 +150,21 @@
     });
   });
 
+  var printDetails = [];
+  window.addEventListener("beforeprint", function () {
+    printDetails = [];
+    $$(".act-now-page details:not([open])").forEach(function (detail) {
+      printDetails.push(detail);
+      detail.open = true;
+    });
+  });
+  window.addEventListener("afterprint", function () {
+    printDetails.forEach(function (detail) {
+      detail.open = false;
+    });
+    printDetails = [];
+  });
+
   /* ---------- TOC active state ---------- */
   var tocLinks = $$('.toc a[href^="#"]');
   if (tocLinks.length && "IntersectionObserver" in window) {
@@ -146,6 +196,9 @@
   if ("serviceWorker" in navigator && (location.protocol === "http:" || location.protocol === "https:")) {
     window.addEventListener("load", function () {
       navigator.serviceWorker.register("sw.js").catch(function () {});
+    });
+    navigator.serviceWorker.addEventListener("controllerchange", function () {
+      window.dispatchEvent(new Event("blackout:cacheupdated"));
     });
   }
 })();

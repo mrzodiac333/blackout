@@ -66,6 +66,8 @@ const FOOTER_COLS = [
     title: "Reference",
     links: [
       ["emergency-contacts.html", "Emergency contacts"],
+      ["act-now.html", "Act now"],
+      ["hazards.html", "Hazards where you live"],
       ["communication.html", "Radio & licensing"],
       ["antenna-plans.html", "Antenna plans"],
       ["glossary.html", "Glossary"],
@@ -92,7 +94,6 @@ function head(page, opts = {}) {
     ? `${page.title} — ${SITE.name} ${SITE.tagline}`
     : `${SITE.name} — ${SITE.tagline}`;
   const desc = page.summary || SITE.description;
-  const canonical = page.slug === "index" ? "index.html" : `${page.slug}.html`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,7 +114,7 @@ function head(page, opts = {}) {
 <script src="js/main.js" defer></script>
 ${opts.scripts ? opts.scripts.map((s) => `<script src="${s}" defer></script>`).join("\n") : ""}
 </head>
-<body>
+<body data-page="${esc(page.slug)}" data-kind="${opts.kind || "guide"}">
 <a class="skip-link" href="#main">Skip to content</a>
 ${header(page)}
 `;
@@ -153,9 +154,7 @@ function footer() {
       <span><a href="changelog.html">Changelog</a> · <a href="sources.html">Sources</a> · <a href="faq.html">FAQ</a> · <a href="index.html">Home</a></span>
     </div>
   </div>
-</footer>
-</body>
-</html>`;
+</footer>`;
 }
 
 function breadcrumbs(page) {
@@ -269,7 +268,9 @@ function table(caption, headers, rows) {
 }
 
 function page(page) {
-  return head(page) + guideLayout(page) + footer();
+  return `${head(page)}${guideLayout(page)}${footer()}
+</body>
+</html>`;
 }
 
 function simplePage(page, content) {
@@ -281,7 +282,9 @@ function simplePage(page, content) {
   <div class="wrap layout"><article class="prose" id="main">${content}</article>${toc(
     page.sections || []
   )}</div>`;
-  return head(page) + body + footer();
+  return `${head(page)}${body}${footer()}
+</body>
+</html>`;
 }
 
 module.exports = {
